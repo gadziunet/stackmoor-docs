@@ -1,0 +1,49 @@
+---
+title: Stackmoor documentation
+description: Install Stackmoor, run your Docker Compose stacks, give them local domains and back them up – with their databases – to S3 or Backblaze B2.
+template: splash
+hero:
+  title: Stackmoor documentation
+  tagline: Docker Compose stacks. Backed up. On your domain.
+  image:
+    file: ~/assets/logo.svg
+    alt: Stackmoor logo
+  actions:
+    - text: Install
+      link: /start/install/
+      icon: right-arrow
+    - text: Set up backups
+      link: /backups/setup/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/gadziunet/stackmoor
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="No volume paths to type" icon="document">
+		Every app keeps its data in its own stack folder, created with the right owner.
+	</Card>
+	<Card title="Backups with databases" icon="approve-check">
+		Databases are dumped while apps keep running, then everything is encrypted and sent to your bucket.
+	</Card>
+	<Card title="Local domains" icon="setting">
+		`cloud.home.example.com` with a real HTTPS certificate – without opening anything to the internet.
+	</Card>
+	<Card title="Updates you confirm" icon="information">
+		New images and panel versions are found for you; nothing changes until you click.
+	</Card>
+</CardGrid>
+
+## Where to start
+
+<CardGrid>
+	<LinkCard title="Install on Linux" href="/start/install/" description="One command on Debian, Ubuntu or Raspberry Pi OS." />
+	<LinkCard title="Install on Unraid" href="/start/unraid/" description="Add Stackmoor as a Docker container." />
+	<LinkCard title="Your first stack" href="/start/first-stack/" description="Paste a compose.yaml and start it." />
+	<LinkCard title="Retention examples" href="/backups/retention/" description="“Once a week, kept for a month” and other setups." />
+</CardGrid>

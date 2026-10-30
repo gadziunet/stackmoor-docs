@@ -1,0 +1,49 @@
+---
+title: Dokumentacja Stackmoor
+description: Zainstaluj Stackmoor, uruchamiaj stacki Docker Compose, nadaj im domeny lokalne i rób ich kopie – razem z bazami danych – do S3 albo Backblaze B2.
+template: splash
+hero:
+  title: Dokumentacja Stackmoor
+  tagline: Stacki Docker Compose. Z kopią zapasową. Na Twojej domenie.
+  image:
+    file: ~/assets/logo.svg
+    alt: Logo Stackmoor
+  actions:
+    - text: Instalacja
+      link: /pl/start/install/
+      icon: right-arrow
+    - text: Kopie zapasowe
+      link: /pl/backups/setup/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/gadziunet/stackmoor
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="Bez wpisywania ścieżek" icon="document">
+		Każda aplikacja trzyma dane we własnym folderze stacka, z właściwym właścicielem.
+	</Card>
+	<Card title="Kopie razem z bazami" icon="approve-check">
+		Zrzuty baz danych robią się w trakcie działania aplikacji, potem wszystko jest szyfrowane i wysyłane do Twojego bucketu.
+	</Card>
+	<Card title="Domeny lokalne" icon="setting">
+		`chmura.dom.example.com` z prawdziwym certyfikatem HTTPS – bez wystawiania czegokolwiek do internetu.
+	</Card>
+	<Card title="Aktualizacje za Twoją zgodą" icon="information">
+		Nowe obrazy i wersje panelu są wykrywane same; nic się nie zmienia, dopóki nie klikniesz.
+	</Card>
+</CardGrid>
+
+## Od czego zacząć
+
+<CardGrid>
+	<LinkCard title="Instalacja na Linuksie" href="/pl/start/install/" description="Jedno polecenie na Debianie, Ubuntu albo Raspberry Pi OS." />
+	<LinkCard title="Instalacja na Unraid" href="/pl/start/unraid/" description="Stackmoor jako kontener Dockera." />
+	<LinkCard title="Pierwszy stack" href="/pl/start/first-stack/" description="Wklej compose.yaml i uruchom." />
+	<LinkCard title="Przykłady rotacji" href="/pl/backups/retention/" description="„Raz w tygodniu, przez miesiąc” i inne ustawienia." />
+</CardGrid>

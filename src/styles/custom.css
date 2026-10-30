@@ -1,0 +1,53 @@
+/* Stackmoor colors and fonts (IBM Plex, SIL Open Font License – public/fonts/OFL.txt). */
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 400; font-display: swap; src: url('/fonts/IBMPlexSans-Regular.woff') format('woff'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 500; font-display: swap; src: url('/fonts/IBMPlexSans-Medium.woff') format('woff'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 600; font-display: swap; src: url('/fonts/IBMPlexSans-SemiBold.woff') format('woff'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 700; font-display: swap; src: url('/fonts/IBMPlexSans-Bold.woff') format('woff'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 400; font-display: swap; src: url('/fonts/IBMPlexMono-Regular.woff') format('woff'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 500; font-display: swap; src: url('/fonts/IBMPlexMono-Medium.woff') format('woff'); }
+
+:root {
+	--sl-font: 'IBM Plex Sans', system-ui, sans-serif;
+	--sl-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* Dark: the blueprint teal of stackmoor.dev */
+:root {
+	--sl-color-accent-low: #123d3a;
+	--sl-color-accent: #3f9e8c;
+	--sl-color-accent-high: #a8e2d2;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #dcefea;
+	--sl-color-gray-2: #b5d6cf;
+	--sl-color-gray-3: #8fbab2;
+	--sl-color-gray-4: #557d77;
+	--sl-color-gray-5: #24504b;
+	--sl-color-gray-6: #10373a;
+	--sl-color-black: #0c2f33;
+}
+
+/* Light: for long reading */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #d7ece6;
+	--sl-color-accent: #1f6f66;
+	--sl-color-accent-high: #123d3a;
+	--sl-color-white: #0f2624;
+	--sl-color-gray-1: #15201f;
+	--sl-color-gray-2: #24403c;
+	--sl-color-gray-3: #4a5654;
+	--sl-color-gray-4: #7d8b88;
+	--sl-color-gray-5: #c9d3d0;
+	--sl-color-gray-6: #edf0ee;
+	--sl-color-gray-7: #f6f7f5;
+	--sl-color-black: #ffffff;
+}
+
+/* Blueprint grid behind the start page hero */
+[data-has-hero] .hero {
+	background-image:
+		linear-gradient(rgba(143, 186, 178, .12) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(143, 186, 178, .12) 1px, transparent 1px);
+	background-size: 24px 24px;
+	border: 1px solid var(--sl-color-gray-5);
+	padding-inline: 1.5rem;
+}
