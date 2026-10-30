@@ -16,13 +16,18 @@ Na Unraid dodajesz Stackmoor jak zwykły kontener: **Docker → Add Container**.
 
 Potem dodaj przez **Add another Path, Port, Variable…**:
 
-| Typ | Kontener | Host | Uwagi |
-|---|---|---|---|
-| Port | `5001` | `5001` | Dowolny wolny port hosta |
-| Path | `/var/run/docker.sock` | `/var/run/docker.sock` | Dostęp do Dockera |
-| Path | `/mnt/user/appdata/stackmoor/stacks` | `/mnt/user/appdata/stackmoor/stacks` | **Ta sama ścieżka po obu stronach** |
-| Variable | `STACKS_DIR` | `/mnt/user/appdata/stackmoor/stacks` | Musi się zgadzać ze ścieżką wyżej |
-| Path | `/app/data` | `/mnt/user/appdata/stackmoor/data` | Ustawienia panelu (SQLite) |
+| Typ | Kontener | Host |
+|---|---|---|
+| Port | `5001` | `5001` |
+| Path | `/var/run/docker.sock` | `/var/run/docker.sock` |
+| Path | `/mnt/user/appdata/stackmoor/stacks` | `/mnt/user/appdata/stackmoor/stacks` |
+| Variable | `STACKS_DIR` | `/mnt/user/appdata/stackmoor/stacks` |
+| Path | `/app/data` | `/mnt/user/appdata/stackmoor/data` |
+
+- **Port** – dowolny wolny port hosta.
+- **`docker.sock`** – daje panelowi dostęp do Dockera.
+- **Folder stacków** – ta sama ścieżka po obu stronach, a `STACKS_DIR` ustawione dokładnie na nią.
+- **`/app/data`** – ustawienia samego panelu (SQLite).
 
 :::caution[Ta sama ścieżka w środku i na zewnątrz]
 Panel podaje Dockerowi hosta położenie stacków, więc folder stacków musi mieć **tę samą ścieżkę w kontenerze i na hoście**, a `STACKS_DIR` musi na niego wskazywać. Inaczej stacki znikną z panelu po aktualizacji. Panel pokazuje ostrzeżenie, gdy folder nie jest podpięty poprawnie.
