@@ -17,7 +17,7 @@ Możesz to zrobić zaraz po instalacji – po założeniu konta panel pyta *Jak 
 
 1. **Wybierz domenę**, którą masz, np. `dom.example.com`. Aplikacje dostaną `<nazwa>.dom.example.com`, a sam panel `my.dom.example.com`.
 2. **Wybierz dostawcę DNS** i wklej klucz API. Klucze są zapisywane w formie zaszyfrowanej.
-3. **Sprawdź adres IP serwera** – adres w Twojej sieci, np. `192.168.1.50`. Wpisuje się sam z adresu, pod którym otworzyłeś panel.
+3. **Adres IP serwera** – adres w Twojej sieci, np. `192.168.1.50` – jest wykrywany automatycznie. Odznacz *Wykrywaj automatycznie*, żeby wpisać go samemu (przydatne przy kilku kartach sieciowych albo VLAN-ach).
 4. Kliknij **Zapisz i zastosuj** (w kreatorze: **Sprawdź i ustaw**). Stackmoor najpierw [sprawdza domenę](#przed-zapisaniem-domena-jest-sprawdzana), potem dodaje rekord DNS i uruchamia Caddy. Pierwszy certyfikat może potrwać minutę lub dwie (w netcup około 15 minut).
 5. **Stack → Domena:** dodaj adres – subdomenę, usługę i port, na którym aplikacja nasłuchuje **w swoim kontenerze** (prawa liczba w `"8080:80"`).
 
@@ -25,13 +25,17 @@ Możesz to zrobić zaraz po instalacji – po założeniu konta panel pyta *Jak 
 Stack z adresem nie musi publikować żadnego portu.
 :::
 
-## Rekord DNS dodaje się sam
+## Rekordy DNS dodają się same
 
-Twoje adresy potrzebują jednego rekordu DNS: `*.dom.example.com` → IP serwera. U tych dostawców Stackmoor dodaje go (albo aktualizuje) przez API, więc w panelu dostawcy nie trzeba nic robić:
+Twoje adresy potrzebują dwóch rekordów DNS wskazujących na IP serwera: `dom.example.com` (sama domena) i `*.dom.example.com` (każda nazwa pod nią). U tych dostawców Stackmoor dodaje je (albo aktualizuje) przez API, więc w panelu dostawcy nie trzeba nic robić:
 
 **Cloudflare, Bunny DNS, Hetzner, DigitalOcean, Porkbun, deSEC, DuckDNS**
 
-U pozostałych dostawców formularz pokazuje rekord do dodania ręcznie: rekord `A` dla `*.dom.example.com` wskazujący na IP serwera. Lokalny adres, np. `192.168.1.50`, jest w porządku. Jeśli wolisz zarządzać rekordem sam, odznacz *Dodaj rekord DNS automatycznie*.
+U pozostałych dostawców formularz pokazuje rekordy do dodania ręcznie: rekordy `A` dla `dom.example.com` i `*.dom.example.com` wskazujące na IP serwera. Lokalny adres, np. `192.168.1.50`, jest w porządku. Jeśli wolisz zarządzać rekordami sam, odznacz *Dodaj rekordy DNS automatycznie*.
+
+**Gdy adres serwera się zmieni** (np. router da nowy IP), Stackmoor zauważy to przy starcie serwera, zaktualizuje rekordy i pokaże informację w **Ustawieniach → Domeny**.
+
+Certyfikat obejmuje obie nazwy, a sama domena prowadzi do adresu panelu.
 
 ## Przed zapisaniem domena jest sprawdzana
 
@@ -39,6 +43,14 @@ Przy pierwszym zapisie domeny Stackmoor sprawdza, czy:
 
 - **klucz API działa** i domena jest na tym koncie – zły klucz wychodzi od razu, a nie po kilku minutach jako brak certyfikatu;
 - **domena nie jest już używana** – jeśli `*.dom.example.com` wskazuje już na inny serwer (np. Twój Cloudron), zobaczysz ostrzeżenie z tym adresem. Wybierz inną domenę (np. subdomenę) albo kliknij **Użyj mimo to**, żeby przestawić ją na ten serwer.
+
+## Pobieranie certyfikatu
+
+Żeby udowodnić, że domena jest Twoja, Caddy dodaje przez API dostawcy tymczasowy rekord weryfikacyjny (`TXT`), a Let's Encrypt go sprawdza. Caddy czeka, aż publiczny DNS naprawdę pokaże ten rekord (do 10 minut), i dopiero wtedy prosi o sprawdzenie.
+
+Niektórzy dostawcy potrzebują dodatkowego czasu, aż rekord trafi na wszystkie ich serwery DNS. Ustawisz go w **Zaawansowane → Czekaj przed weryfikacją Let's Encrypt** – działa jak *Propagation seconds* w Nginx Proxy Manager. Bunny DNS domyślnie czeka 120 sekund, netcup 900.
+
+Karta **Stan** odświeża się sama, dopóki nie ma certyfikatu. Jeśli próba się nie udała (np. *No TXT record found*), Caddy spróbuje ponownie sam – albo kliknij **Pobierz certyfikat ponownie**, żeby od razu zacząć nową próbę.
 
 ## Dostawcy DNS
 

@@ -17,7 +17,7 @@ You can do this right after installing – the panel asks *How do you want to op
 
 1. **Choose a domain** you own, e.g. `home.example.com`. Apps get `<name>.home.example.com`, the panel itself `my.home.example.com`.
 2. **Pick the DNS provider** and paste its API key. Keys are stored encrypted.
-3. **Check the server's IP address** – the address in your network, e.g. `192.168.1.50`. It is filled in from the address you opened the panel with.
+3. **The server's IP address** – the address in your network, e.g. `192.168.1.50` – is detected automatically. Untick *Detect automatically* to enter it yourself (useful with several network cards or VLANs).
 4. Click **Save and apply** (in the wizard: **Check and set up**). Stackmoor first [checks the domain](#before-saving-the-domain-is-checked), then adds the DNS record and starts Caddy. The first certificate can take a minute or two (with netcup about 15 minutes).
 5. **Open a stack → Domain:** add an address – subdomain, service and the port the app listens on **inside** its container (the right number in `"8080:80"`).
 
@@ -25,13 +25,17 @@ You can do this right after installing – the panel asks *How do you want to op
 A stack with an address does not need to publish any port at all.
 :::
 
-## The DNS record is added for you
+## The DNS records are added for you
 
-Your addresses need one DNS record: `*.home.example.com` → the server's IP. With these providers Stackmoor adds it (or updates it) through the API, so there is nothing to do in the provider's dashboard:
+Your addresses need two DNS records pointing to the server's IP: `home.example.com` (the domain itself) and `*.home.example.com` (every name under it). With these providers Stackmoor adds them (or updates them) through the API, so there is nothing to do in the provider's dashboard:
 
 **Cloudflare, Bunny DNS, Hetzner, DigitalOcean, Porkbun, deSEC, DuckDNS**
 
-With the other providers, the form shows the record to add by hand: an `A` record for `*.home.example.com` pointing to the server's IP. A local IP like `192.168.1.50` is fine. If you prefer to manage the record yourself, untick *Add the DNS record automatically*.
+With the other providers, the form shows the records to add by hand: `A` records for `home.example.com` and `*.home.example.com` pointing to the server's IP. A local IP like `192.168.1.50` is fine. If you prefer to manage the records yourself, untick *Add the DNS records automatically*.
+
+**When the server's address changes** (for example a new IP from your router), Stackmoor notices it when the server starts, updates the records and shows a note in **Settings → Domains**.
+
+The certificate covers both names too, and the bare domain leads to the panel's address.
 
 ## Before saving, the domain is checked
 
@@ -39,6 +43,14 @@ The first time you save a domain, Stackmoor checks that:
 
 - **the API key works** and the domain is in that account – a wrong key shows up right away, not minutes later as a missing certificate;
 - **the domain is not used yet** – if `*.home.example.com` already points to another server (for example your Cloudron), you get a warning with that address. Choose a different domain (e.g. a subdomain), or click **Use anyway** to point it to this server.
+
+## Getting the certificate
+
+To prove the domain is yours, Caddy adds a temporary verification record (`TXT`) through your provider's API, and Let's Encrypt checks it. Caddy waits until public DNS really shows that record (up to 10 minutes) before asking for the check.
+
+Some providers need extra time until all their name servers have the record. Set it under **Advanced → Wait before Let's Encrypt checks** – it works like *Propagation seconds* in Nginx Proxy Manager. Bunny DNS waits 120 seconds by default, netcup 900.
+
+The **Status** card refreshes by itself until the certificate is there. If an attempt failed (for example *No TXT record found*), Caddy tries again on its own – or click **Get the certificate again** to start a new attempt right away.
 
 ## DNS providers
 
