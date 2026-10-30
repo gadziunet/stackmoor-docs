@@ -22,6 +22,8 @@ Skrypt:
 
 Otwórz ten adres i utwórz konto administratora – to jedyne konto w panelu. Hasło musi mieć co najmniej 10 znaków.
 
+Następnie panel pyta, **jak chcesz go otwierać**: na razie po adresie IP albo od razu pod własną domeną (np. `https://my.dom.example.com`) – zob. [Domeny lokalne](/pl/guides/local-domains/). Zmienisz to później w każdej chwili.
+
 Przenosisz się ze starego serwera? Wybierz zamiast tego **Przywróć serwer z kopii zapasowej** – zob. [Przywrócenie całego serwera](/pl/backups/restore/#przywrócenie-całego-serwera).
 
 ## Opcje

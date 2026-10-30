@@ -22,6 +22,8 @@ The script:
 
 Open that address and create the administrator account – it is the only account in the panel. The password needs at least 10 characters.
 
+Next the panel asks **how you want to open it**: by IP address for now, or with your own domain right away (e.g. `https://my.home.example.com`) – see [Local domains](/guides/local-domains/). You can change this later at any time.
+
 Moving from an old server? Choose **Restore a server from a backup** instead – see [Restore everything on a new server](/backups/restore/#restore-everything-on-a-new-server).
 
 ## Options

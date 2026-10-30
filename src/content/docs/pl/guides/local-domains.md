@@ -13,15 +13,32 @@ Stackmoor może nadać każdemu stackowi adres typu `chmura.dom.example.com` z p
 
 ## Konfiguracja
 
-1. **Wybierz domenę**, którą masz, np. `dom.example.com`. Aplikacje dostaną `<nazwa>.dom.example.com`.
-2. **Utwórz rekord DNS** u dostawcy: rekord `A` dla `*.dom.example.com` wskazujący na IP serwera. Lokalny adres, np. `192.168.1.50`, jest w porządku.
-3. **Ustawienia → Domeny:** wpisz domenę, wybierz dostawcę DNS i wklej klucz API. Klucze są zapisywane w formie zaszyfrowanej.
-4. Kliknij **Zapisz i zastosuj**. Pierwszy certyfikat może potrwać minutę lub dwie (w netcup około 15 minut).
+Możesz to zrobić zaraz po instalacji – po założeniu konta panel pyta *Jak chcesz otwierać panel?* – albo w każdej chwili w **Ustawieniach → Domeny**.
+
+1. **Wybierz domenę**, którą masz, np. `dom.example.com`. Aplikacje dostaną `<nazwa>.dom.example.com`, a sam panel `my.dom.example.com`.
+2. **Wybierz dostawcę DNS** i wklej klucz API. Klucze są zapisywane w formie zaszyfrowanej.
+3. **Sprawdź adres IP serwera** – adres w Twojej sieci, np. `192.168.1.50`. Wpisuje się sam z adresu, pod którym otworzyłeś panel.
+4. Kliknij **Zapisz i zastosuj** (w kreatorze: **Sprawdź i ustaw**). Stackmoor najpierw [sprawdza domenę](#przed-zapisaniem-domena-jest-sprawdzana), potem dodaje rekord DNS i uruchamia Caddy. Pierwszy certyfikat może potrwać minutę lub dwie (w netcup około 15 minut).
 5. **Stack → Domena:** dodaj adres – subdomenę, usługę i port, na którym aplikacja nasłuchuje **w swoim kontenerze** (prawa liczba w `"8080:80"`).
 
 :::tip
 Stack z adresem nie musi publikować żadnego portu.
 :::
+
+## Rekord DNS dodaje się sam
+
+Twoje adresy potrzebują jednego rekordu DNS: `*.dom.example.com` → IP serwera. U tych dostawców Stackmoor dodaje go (albo aktualizuje) przez API, więc w panelu dostawcy nie trzeba nic robić:
+
+**Cloudflare, Bunny DNS, Hetzner, DigitalOcean, Porkbun, deSEC, DuckDNS**
+
+U pozostałych dostawców formularz pokazuje rekord do dodania ręcznie: rekord `A` dla `*.dom.example.com` wskazujący na IP serwera. Lokalny adres, np. `192.168.1.50`, jest w porządku. Jeśli wolisz zarządzać rekordem sam, odznacz *Dodaj rekord DNS automatycznie*.
+
+## Przed zapisaniem domena jest sprawdzana
+
+Przy pierwszym zapisie domeny Stackmoor sprawdza, czy:
+
+- **klucz API działa** i domena jest na tym koncie – zły klucz wychodzi od razu, a nie po kilku minutach jako brak certyfikatu;
+- **domena nie jest już używana** – jeśli `*.dom.example.com` wskazuje już na inny serwer (np. Twój Cloudron), zobaczysz ostrzeżenie z tym adresem. Wybierz inną domenę (np. subdomenę) albo kliknij **Użyj mimo to**, żeby przestawić ją na ten serwer.
 
 ## Dostawcy DNS
 

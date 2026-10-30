@@ -13,15 +13,32 @@ Stackmoor can give every stack an address such as `cloud.home.example.com` with 
 
 ## Set it up
 
-1. **Choose a domain** you own, e.g. `home.example.com`. Apps get `<name>.home.example.com`.
-2. **Create a DNS record** at your provider: an `A` record for `*.home.example.com` pointing to the server's IP. A local IP like `192.168.1.50` is fine.
-3. **Settings → Domains:** enter the domain, pick the DNS provider and paste its API key. Keys are stored encrypted.
-4. Click **Save and apply**. The first certificate can take a minute or two (with netcup about 15 minutes).
+You can do this right after installing – the panel asks *How do you want to open the panel?* after you create your account – or any time later in **Settings → Domains**.
+
+1. **Choose a domain** you own, e.g. `home.example.com`. Apps get `<name>.home.example.com`, the panel itself `my.home.example.com`.
+2. **Pick the DNS provider** and paste its API key. Keys are stored encrypted.
+3. **Check the server's IP address** – the address in your network, e.g. `192.168.1.50`. It is filled in from the address you opened the panel with.
+4. Click **Save and apply** (in the wizard: **Check and set up**). Stackmoor first [checks the domain](#before-saving-the-domain-is-checked), then adds the DNS record and starts Caddy. The first certificate can take a minute or two (with netcup about 15 minutes).
 5. **Open a stack → Domain:** add an address – subdomain, service and the port the app listens on **inside** its container (the right number in `"8080:80"`).
 
 :::tip
 A stack with an address does not need to publish any port at all.
 :::
+
+## The DNS record is added for you
+
+Your addresses need one DNS record: `*.home.example.com` → the server's IP. With these providers Stackmoor adds it (or updates it) through the API, so there is nothing to do in the provider's dashboard:
+
+**Cloudflare, Bunny DNS, Hetzner, DigitalOcean, Porkbun, deSEC, DuckDNS**
+
+With the other providers, the form shows the record to add by hand: an `A` record for `*.home.example.com` pointing to the server's IP. A local IP like `192.168.1.50` is fine. If you prefer to manage the record yourself, untick *Add the DNS record automatically*.
+
+## Before saving, the domain is checked
+
+The first time you save a domain, Stackmoor checks that:
+
+- **the API key works** and the domain is in that account – a wrong key shows up right away, not minutes later as a missing certificate;
+- **the domain is not used yet** – if `*.home.example.com` already points to another server (for example your Cloudron), you get a warning with that address. Choose a different domain (e.g. a subdomain), or click **Use anyway** to point it to this server.
 
 ## DNS providers
 
