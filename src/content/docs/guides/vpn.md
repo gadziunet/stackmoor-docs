@@ -32,6 +32,11 @@ If the tunnel is down, the apps behind it have **no internet at all**. They neve
 
 For safety, commands in the file (`PostUp`, `PostDown`, …) and `DNS` lines are removed. A keepalive is added so the tunnel stays open behind your router.
 
+<figure class="shot" data-shot="vpn-settings">
+<img class="shot-light" src="/screens/en/vpn-settings-light.webp" alt="Settings → VPN with two tunnels" width="1020" height="1250" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/vpn-settings-dark.webp" alt="Settings → VPN with two tunnels" width="1020" height="1250" loading="lazy" decoding="async" />
+</figure>
+
 ## Send an app through it
 
 1. Open the stack → **VPN** tab.
@@ -39,6 +44,11 @@ For safety, commands in the file (`PostUp`, `PostDown`, …) and `DNS` lines are
 3. Click **Save and apply**. The service is recreated; its published ports and its domain keep working.
 
 To stop using the VPN, choose **— no VPN —** and save.
+
+<figure class="shot" data-shot="vpn-stack">
+<img class="shot-light" src="/screens/en/vpn-stack-light.webp" alt="A stack’s VPN tab" width="956" height="371" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/vpn-stack-dark.webp" alt="A stack’s VPN tab" width="956" height="371" loading="lazy" decoding="async" />
+</figure>
 
 ## Status
 

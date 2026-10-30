@@ -19,9 +19,19 @@ Co się dzieje:
 
 Wyjście widać na żywo i zapisuje się w **Historii** stacka.
 
+<figure class="shot" data-shot="stack-backups">
+<img class="shot-light" src="/screens/pl/stack-backups-light.webp" alt="Zakładka Kopie w stacku" width="956" height="297" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/stack-backups-dark.webp" alt="Zakładka Kopie w stacku" width="956" height="297" loading="lazy" decoding="async" />
+</figure>
+
 ## Uruchomienia kopii
 
 **Ustawienia → Backup** pokazuje kopie pogrupowane po **uruchomieniu**: jedno nocne uruchomienie zawiera wszystkie stacki i ustawienia panelu; kopia pojedynczego stacka albo kopia przed aktualizacją to osobne uruchomienie. Rozwiń uruchomienie, żeby zobaczyć jego stacki – także te usunięte później – i przywrócić dowolny z nich.
+
+<figure class="shot" data-shot="backups-runs">
+<img class="shot-light" src="/screens/pl/backups-runs-light.webp" alt="Przebiegi kopii ze stackami w każdym z nich" width="956" height="495" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/backups-runs-dark.webp" alt="Przebiegi kopii ze stackami w każdym z nich" width="956" height="495" loading="lazy" decoding="async" />
+</figure>
 
 ## Przywróć wszystkie stacki z uruchomienia
 
@@ -61,6 +71,11 @@ Nowy serwer może mieć inny folder stacków – stacki trafiają do folderu now
 :::
 
 Da się też użyć kopii z wersji 0.5: ich części są grupowane w uruchomienia po czasie.
+
+<figure class="shot" data-shot="setup-restore">
+<img class="shot-light" src="/screens/pl/setup-restore-light.webp" alt="Przywracanie całego serwera w kreatorze pierwszego uruchomienia" width="620" height="706" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/setup-restore-dark.webp" alt="Przywracanie całego serwera w kreatorze pierwszego uruchomienia" width="620" height="706" loading="lazy" decoding="async" />
+</figure>
 
 ## Tylko jedna aplikacja, tylko jej dane
 

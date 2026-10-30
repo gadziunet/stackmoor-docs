@@ -32,6 +32,11 @@ Gdy tunel nie działa, aplikacje za nim **nie mają w ogóle internetu**. Nigdy 
 
 Dla bezpieczeństwa polecenia z pliku (`PostUp`, `PostDown`, …) i linie `DNS` są usuwane. Dodawany jest keepalive, żeby tunel nie zasypiał za routerem.
 
+<figure class="shot" data-shot="vpn-settings">
+<img class="shot-light" src="/screens/pl/vpn-settings-light.webp" alt="Ustawienia → VPN z dwoma tunelami" width="1020" height="1250" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/vpn-settings-dark.webp" alt="Ustawienia → VPN z dwoma tunelami" width="1020" height="1250" loading="lazy" decoding="async" />
+</figure>
+
 ## Puść aplikację przez tunel
 
 1. Otwórz stack → zakładka **VPN**.
@@ -39,6 +44,11 @@ Dla bezpieczeństwa polecenia z pliku (`PostUp`, `PostDown`, …) i linie `DNS` 
 3. Kliknij **Zapisz i zastosuj**. Usługa zostanie odtworzona; jej opublikowane porty i domena działają dalej.
 
 Żeby przestać używać VPN, wybierz **— bez VPN —** i zapisz.
+
+<figure class="shot" data-shot="vpn-stack">
+<img class="shot-light" src="/screens/pl/vpn-stack-light.webp" alt="Zakładka VPN w stacku" width="956" height="371" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/vpn-stack-dark.webp" alt="Zakładka VPN w stacku" width="956" height="371" loading="lazy" decoding="async" />
+</figure>
 
 ## Stan
 

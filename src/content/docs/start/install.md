@@ -26,6 +26,15 @@ Next the panel asks **how you want to open it**: by IP address for now, or with 
 
 Moving from an old server? Choose **Restore a server from a backup** instead – see [Restore everything on a new server](/backups/restore/#restore-everything-on-a-new-server).
 
+<figure class="shot" data-shot="setup-access">
+<img class="shot-light" src="/screens/en/setup-access-light.webp" alt="After creating the account: IP address for now, or the domain right away" width="620" height="297" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/setup-access-dark.webp" alt="After creating the account: IP address for now, or the domain right away" width="620" height="297" loading="lazy" decoding="async" />
+</figure>
+<figure class="shot" data-shot="setup-domain">
+<img class="shot-light" src="/screens/en/setup-domain-light.webp" alt="Setting up the domain in the first-run wizard" width="620" height="938" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/setup-domain-dark.webp" alt="Setting up the domain in the first-run wizard" width="620" height="938" loading="lazy" decoding="async" />
+</figure>
+
 ## Options
 
 Set them in front of `bash`, e.g. `curl … | sudo PORT=8080 bash`:

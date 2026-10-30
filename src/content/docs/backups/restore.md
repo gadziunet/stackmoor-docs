@@ -19,9 +19,19 @@ What happens:
 
 The output is shown live and saved in the stack's **History**.
 
+<figure class="shot" data-shot="stack-backups">
+<img class="shot-light" src="/screens/en/stack-backups-light.webp" alt="A stack’s Backups tab" width="956" height="297" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/stack-backups-dark.webp" alt="A stack’s Backups tab" width="956" height="297" loading="lazy" decoding="async" />
+</figure>
+
 ## Backup runs
 
 **Settings → Backups** lists backups by **run**: one nightly run contains every stack and the panel's own settings; a backup of a single stack or a backup before an update is a run of its own. Open a run to see its stacks – including ones you have deleted since – and restore any of them.
+
+<figure class="shot" data-shot="backups-runs">
+<img class="shot-light" src="/screens/en/backups-runs-light.webp" alt="Backup runs with the stacks in each" width="956" height="495" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/backups-runs-dark.webp" alt="Backup runs with the stacks in each" width="956" height="495" loading="lazy" decoding="async" />
+</figure>
 
 ## Restore all stacks of a run
 
@@ -61,6 +71,11 @@ The new server may use a different stacks folder – stacks are restored into th
 :::
 
 Backups made by version 0.5 can be used too: their snapshots are grouped into runs by time.
+
+<figure class="shot" data-shot="setup-restore">
+<img class="shot-light" src="/screens/en/setup-restore-light.webp" alt="Restoring a whole server in the first-run wizard" width="620" height="706" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/setup-restore-dark.webp" alt="Restoring a whole server in the first-run wizard" width="620" height="706" loading="lazy" decoding="async" />
+</figure>
 
 ## Only one app, only its data
 

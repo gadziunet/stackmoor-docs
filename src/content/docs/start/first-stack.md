@@ -17,6 +17,11 @@ Before saving, the file is checked with `docker compose config`. A broken file i
 
 After saving, the panel shows exactly what it changed – usually where app data will be stored (see [Automatic volumes](/guides/automatic-volumes/)).
 
+<figure class="shot" data-shot="overview">
+<img class="shot-light" src="/screens/en/overview-light.webp" alt="The Stackmoor panel with a stack open" width="1280" height="860" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/overview-dark.webp" alt="The Stackmoor panel with a stack open" width="1280" height="860" loading="lazy" decoding="async" />
+</figure>
+
 ## Example: Miniflux with PostgreSQL
 
 ```yaml
@@ -59,6 +64,11 @@ The named volume `db` becomes the folder `./data/db` inside the stack – no pat
 | **Open ↗** | Opens the app in a new tab: at its [domain](/guides/local-domains/) if it has one, otherwise at the server's address with the published port. With several addresses it shows a short list. |
 
 Every operation shows its live output and is saved in the **History** tab.
+
+<figure class="shot" data-shot="stack">
+<img class="shot-light" src="/screens/en/stack-light.webp" alt="A stack: buttons and the compose editor" width="1020" height="725" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/stack-dark.webp" alt="A stack: buttons and the compose editor" width="1020" height="725" loading="lazy" decoding="async" />
+</figure>
 
 ## Ports
 

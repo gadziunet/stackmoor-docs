@@ -13,6 +13,11 @@ Stackmoor informuje, gdy pojawi się coś nowego. **Nic nie jest aktualizowane b
 - **Sprawdzaj też obrazy stacków** – porównuje lokalne obrazy z rejestrem (Docker Hub, GitHub Container Registry, …).
 - **Sprawdź teraz** – sprawdza od razu.
 
+<figure class="shot" data-shot="updates">
+<img class="shot-light" src="/screens/pl/updates-light.webp" alt="Ustawienia → Aktualizacje" width="1020" height="893" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/updates-dark.webp" alt="Ustawienia → Aktualizacje" width="1020" height="893" loading="lazy" decoding="async" />
+</figure>
+
 ## Aktualizacja stacka
 
 Stack z nowym obrazem ma strzałkę na liście i ramkę z listą obrazów. Otwórz go i kliknij **Aktualizuj**: nowe obrazy zostaną pobrane, a kontenery odtworzone. Dane w `./data` zostają.

@@ -17,6 +17,11 @@ Przed zapisem plik jest sprawdzany przez `docker compose config`. Błędny plik 
 
 Po zapisie panel pokazuje dokładnie, co zmienił – zwykle, gdzie będą dane aplikacji (zob. [Automatyczne wolumeny](/pl/guides/automatic-volumes/)).
 
+<figure class="shot" data-shot="overview">
+<img class="shot-light" src="/screens/pl/overview-light.webp" alt="Panel Stackmoor z otwartym stackiem" width="1280" height="860" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/overview-dark.webp" alt="Panel Stackmoor z otwartym stackiem" width="1280" height="860" loading="lazy" decoding="async" />
+</figure>
+
 ## Przykład: Miniflux z PostgreSQL
 
 ```yaml
@@ -59,6 +64,11 @@ Nazwany wolumen `db` staje się folderem `./data/db` w stacku – bez wpisywania
 | **Otwórz ↗** | Otwiera aplikację w nowej karcie: pod jej [domeną](/pl/guides/local-domains/), jeśli ją ma, a bez niej pod adresem serwera z opublikowanym portem. Gdy adresów jest kilka, pokazuje krótką listę. |
 
 Każda operacja pokazuje wyjście na żywo i zapisuje się w zakładce **Historia**.
+
+<figure class="shot" data-shot="stack">
+<img class="shot-light" src="/screens/pl/stack-light.webp" alt="Stack: przyciski i edytor compose" width="1020" height="725" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/stack-dark.webp" alt="Stack: przyciski i edytor compose" width="1020" height="725" loading="lazy" decoding="async" />
+</figure>
 
 ## Porty
 

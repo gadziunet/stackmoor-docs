@@ -26,6 +26,15 @@ Następnie panel pyta, **jak chcesz go otwierać**: na razie po adresie IP albo 
 
 Przenosisz się ze starego serwera? Wybierz zamiast tego **Przywróć serwer z kopii zapasowej** – zob. [Przywrócenie całego serwera](/pl/backups/restore/#przywrócenie-całego-serwera).
 
+<figure class="shot" data-shot="setup-access">
+<img class="shot-light" src="/screens/pl/setup-access-light.webp" alt="Po założeniu konta: na razie adres IP albo od razu domena" width="620" height="297" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/setup-access-dark.webp" alt="Po założeniu konta: na razie adres IP albo od razu domena" width="620" height="297" loading="lazy" decoding="async" />
+</figure>
+<figure class="shot" data-shot="setup-domain">
+<img class="shot-light" src="/screens/pl/setup-domain-light.webp" alt="Ustawianie domeny w kreatorze pierwszego uruchomienia" width="620" height="938" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/setup-domain-dark.webp" alt="Ustawianie domeny w kreatorze pierwszego uruchomienia" width="620" height="938" loading="lazy" decoding="async" />
+</figure>
+
 ## Opcje
 
 Ustawia się je przed `bash`, np. `curl … | sudo PORT=8080 bash`:

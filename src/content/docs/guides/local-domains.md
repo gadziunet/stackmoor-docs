@@ -25,6 +25,15 @@ You can do this right after installing – the panel asks *How do you want to op
 A stack with an address does not need to publish any port at all.
 :::
 
+<figure class="shot" data-shot="domains-form">
+<img class="shot-light" src="/screens/en/domains-form-light.webp" alt="Settings → Domains: domain, DNS provider, server IP and DNS records" width="956" height="685" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/domains-form-dark.webp" alt="Settings → Domains: domain, DNS provider, server IP and DNS records" width="956" height="685" loading="lazy" decoding="async" />
+</figure>
+<figure class="shot" data-shot="stack-domain">
+<img class="shot-light" src="/screens/en/stack-domain-light.webp" alt="A stack’s Domain tab with an address" width="956" height="335" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/stack-domain-dark.webp" alt="A stack’s Domain tab with an address" width="956" height="335" loading="lazy" decoding="async" />
+</figure>
+
 ## The DNS records are added for you
 
 Your addresses need two DNS records pointing to the server's IP: `home.example.com` (the domain itself) and `*.home.example.com` (every name under it). With these providers Stackmoor adds them (or updates them) through the API, so there is nothing to do in the provider's dashboard:
@@ -51,6 +60,11 @@ To prove the domain is yours, Caddy adds a temporary verification record (`TXT`)
 Some providers need extra time until all their name servers have the record. Set it under **Advanced → Wait before Let's Encrypt checks** – it works like *Propagation seconds* in Nginx Proxy Manager. Bunny DNS waits 120 seconds by default, netcup 900.
 
 The **Status** card refreshes by itself until the certificate is there. If an attempt failed (for example *No TXT record found*), Caddy tries again on its own – or click **Get the certificate again** to start a new attempt right away.
+
+<figure class="shot" data-shot="domains-status">
+<img class="shot-light" src="/screens/en/domains-status-light.webp" alt="Status: Caddy, the certificate and the panel address" width="956" height="224" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/domains-status-dark.webp" alt="Status: Caddy, the certificate and the panel address" width="956" height="224" loading="lazy" decoding="async" />
+</figure>
 
 ## DNS providers
 

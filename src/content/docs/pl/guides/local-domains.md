@@ -25,6 +25,15 @@ Możesz to zrobić zaraz po instalacji – po założeniu konta panel pyta *Jak 
 Stack z adresem nie musi publikować żadnego portu.
 :::
 
+<figure class="shot" data-shot="domains-form">
+<img class="shot-light" src="/screens/pl/domains-form-light.webp" alt="Ustawienia → Domeny: domena, dostawca DNS, IP serwera i rekordy DNS" width="956" height="685" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/domains-form-dark.webp" alt="Ustawienia → Domeny: domena, dostawca DNS, IP serwera i rekordy DNS" width="956" height="685" loading="lazy" decoding="async" />
+</figure>
+<figure class="shot" data-shot="stack-domain">
+<img class="shot-light" src="/screens/pl/stack-domain-light.webp" alt="Zakładka Domena w stacku z adresem" width="956" height="335" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/stack-domain-dark.webp" alt="Zakładka Domena w stacku z adresem" width="956" height="335" loading="lazy" decoding="async" />
+</figure>
+
 ## Rekordy DNS dodają się same
 
 Twoje adresy potrzebują dwóch rekordów DNS wskazujących na IP serwera: `dom.example.com` (sama domena) i `*.dom.example.com` (każda nazwa pod nią). U tych dostawców Stackmoor dodaje je (albo aktualizuje) przez API, więc w panelu dostawcy nie trzeba nic robić:
@@ -51,6 +60,11 @@ Przy pierwszym zapisie domeny Stackmoor sprawdza, czy:
 Niektórzy dostawcy potrzebują dodatkowego czasu, aż rekord trafi na wszystkie ich serwery DNS. Ustawisz go w **Zaawansowane → Czekaj przed weryfikacją Let's Encrypt** – działa jak *Propagation seconds* w Nginx Proxy Manager. Bunny DNS domyślnie czeka 120 sekund, netcup 900.
 
 Karta **Stan** odświeża się sama, dopóki nie ma certyfikatu. Jeśli próba się nie udała (np. *No TXT record found*), Caddy spróbuje ponownie sam – albo kliknij **Pobierz certyfikat ponownie**, żeby od razu zacząć nową próbę.
+
+<figure class="shot" data-shot="domains-status">
+<img class="shot-light" src="/screens/pl/domains-status-light.webp" alt="Stan: Caddy, certyfikat i adres panelu" width="956" height="224" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/domains-status-dark.webp" alt="Stan: Caddy, certyfikat i adres panelu" width="956" height="224" loading="lazy" decoding="async" />
+</figure>
 
 ## Dostawcy DNS
 

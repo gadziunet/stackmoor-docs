@@ -46,6 +46,11 @@ Kopie robią się w wybrane dni o wybranej godzinie, w strefie czasowej przeglą
 
 **Zrób kopię teraz** uruchamia kopię od razu. Pojedynczy stack można skopiować z jego zakładki **Kopie**.
 
+<figure class="shot" data-shot="backups-settings">
+<img class="shot-light" src="/screens/pl/backups-settings-light.webp" alt="Ustawienia → Kopie zapasowe" width="1020" height="1300" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/backups-settings-dark.webp" alt="Ustawienia → Kopie zapasowe" width="1020" height="1300" loading="lazy" decoding="async" />
+</figure>
+
 ## Przed każdą aktualizacją
 
 Gdy włączone jest **Rób kopię stacka przed jego aktualizacją**, kliknięcie **Aktualizuj** najpierw robi kopię stacka. Jeśli się nie uda, aktualizacja się nie wykona.

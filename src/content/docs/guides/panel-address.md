@@ -13,6 +13,11 @@ To change it: **Settings → Domains → Panel address**, enter another name (e.
 
 Saving only reloads Caddy's configuration – nothing is downloaded or restarted.
 
+<figure class="shot" data-shot="panel-address">
+<img class="shot-light" src="/screens/en/panel-address-light.webp" alt="Panel address" width="956" height="271" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/panel-address-dark.webp" alt="Panel address" width="956" height="271" loading="lazy" decoding="async" />
+</figure>
+
 ## Allow the panel only at its address
 
 You can block opening the panel by IP address (e.g. `http://192.168.1.50:5001`). After that, the panel only opens at its domain, and visits by IP are redirected there.

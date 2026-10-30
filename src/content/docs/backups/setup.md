@@ -46,6 +46,11 @@ Backups run on the chosen days at the chosen time, in the time zone of the brows
 
 **Back up now** starts a backup immediately. A single stack can also be backed up from its **Backups** tab.
 
+<figure class="shot" data-shot="backups-settings">
+<img class="shot-light" src="/screens/en/backups-settings-light.webp" alt="Settings → Backups" width="1020" height="1300" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/backups-settings-dark.webp" alt="Settings → Backups" width="1020" height="1300" loading="lazy" decoding="async" />
+</figure>
+
 ## Before every update
 
 With **Back up a stack before updating it** on, clicking **Update** on a stack first backs it up. If that backup fails, the update does not run.

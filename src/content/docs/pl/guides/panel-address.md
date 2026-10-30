@@ -13,6 +13,11 @@ Gdy dodasz domenę, panel od razu dostaje adres `my` – np. `https://my.dom.exa
 
 Zapis tylko przeładowuje konfigurację Caddy – nic nie jest pobierane ani restartowane.
 
+<figure class="shot" data-shot="panel-address">
+<img class="shot-light" src="/screens/pl/panel-address-light.webp" alt="Adres panelu" width="956" height="291" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/panel-address-dark.webp" alt="Adres panelu" width="956" height="291" loading="lazy" decoding="async" />
+</figure>
+
 ## Panel tylko pod tym adresem
 
 Możesz zablokować otwieranie panelu przez adres IP (np. `http://192.168.1.50:5001`). Panel otworzy się wtedy tylko pod swoją domeną, a wejścia przez IP zostaną na nią przekierowane.

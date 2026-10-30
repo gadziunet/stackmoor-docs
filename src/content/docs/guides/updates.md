@@ -13,6 +13,11 @@ Stackmoor tells you when something new is available. **Nothing is ever updated w
 - **Also check stack images** – compares your local images with their registry (Docker Hub, GitHub Container Registry, …).
 - **Check now** – runs the check immediately.
 
+<figure class="shot" data-shot="updates">
+<img class="shot-light" src="/screens/en/updates-light.webp" alt="Settings → Updates" width="1020" height="893" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/updates-dark.webp" alt="Settings → Updates" width="1020" height="893" loading="lazy" decoding="async" />
+</figure>
+
 ## Updating a stack
 
 A stack with a new image shows an arrow in the list and a notice with the images. Open it and click **Update**: new images are pulled and the containers recreated. Data in `./data` is kept.
