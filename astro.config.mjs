@@ -36,6 +36,7 @@ export default defineConfig({
 					items: [
 						'guides/automatic-volumes',
 						'guides/local-domains',
+						'guides/vpn',
 						'guides/panel-address',
 						'guides/updates',
 					],
