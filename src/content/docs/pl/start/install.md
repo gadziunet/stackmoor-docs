@@ -22,6 +22,8 @@ Skrypt:
 
 Otwórz ten adres i utwórz konto administratora – to jedyne konto w panelu. Hasło musi mieć co najmniej 10 znaków.
 
+Przenosisz się ze starego serwera? Wybierz zamiast tego **Przywróć serwer z kopii zapasowej** – zob. [Przywrócenie całego serwera](/pl/backups/restore/#przywrócenie-całego-serwera).
+
 :::tip[Jesteś zalogowany jako root?]
 Na świeżym Debianie często pracujesz jako `root`, a `sudo` nie jest zainstalowane. Wtedy po prostu pomiń `sudo`: `curl … | bash`.
 :::

@@ -19,9 +19,17 @@ Co się dzieje:
 
 Wyjście widać na żywo i zapisuje się w **Historii** stacka.
 
+## Uruchomienia kopii
+
+**Ustawienia → Backup** pokazuje kopie pogrupowane po **uruchomieniu**: jedno nocne uruchomienie zawiera wszystkie stacki i ustawienia panelu; kopia pojedynczego stacka albo kopia przed aktualizacją to osobne uruchomienie. Rozwiń uruchomienie, żeby zobaczyć jego stacki – także te usunięte później – i przywrócić dowolny z nich.
+
+## Przywróć wszystkie stacki z uruchomienia
+
+Rozwiń uruchomienie i kliknij **Przywróć wszystkie stacki**. Każdy stack z tego uruchomienia zostanie przywrócony po kolei, dokładnie jak wyżej. Ustawienia samego panelu zostają bez zmian.
+
 ## Przywróć usunięty stack
 
-**Ustawienia → Backup** pokazuje kopie wszystkich stacków, także usuniętych. Kliknij tam **Przywróć**.
+Rozwiń w **Ustawienia → Backup** uruchomienie, które zawiera ten stack, i kliknij przy nim **Przywróć**.
 
 ## Kopia stacka (klon)
 
@@ -33,7 +41,26 @@ Klon nie wystartuje, jeśli jego `compose.yaml` używa tych samych publikowanych
 
 ## Przywrócenie całego serwera
 
-Przywrócenie wszystkiego naraz – ustawień panelu i wszystkich stacków – pojawi się razem z kreatorem instalacji. Ustawienia panelu już są w każdej kopii, więc kopie robione dziś da się do tego użyć.
+Gdy serwer padnie, zainstaluj Stackmoor na nowym ([Linux](/pl/start/install/) albo [Unraid](/pl/start/unraid/)) i otwórz panel. Zamiast tworzyć konto:
+
+1. kliknij **Przywróć serwer z kopii zapasowej**,
+2. podaj magazyn (dostawcę, adres, bucket, folder, klucze) i **hasło szyfrowania** starego serwera, kliknij **Połącz**,
+3. wybierz kopię – pokazywane są tylko pełne uruchomienia (zawierają ustawienia panelu),
+4. kliknij **Przywróć tę kopię** i obserwuj postęp.
+
+Stackmoor przywraca po kolei:
+
+- ustawienia panelu: konto administratora (z hasłem), harmonogram i rotację kopii, domeny lokalne i klucze DNS,
+- wszystkie stacki z tego uruchomienia, razem z bazami danych,
+- Caddy z certyfikatami, jeśli używałeś domen lokalnych.
+
+Potem zaloguj się swoim **poprzednim** kontem.
+
+:::tip
+Nowy serwer może mieć inny folder stacków – stacki trafiają do folderu nowej instalacji. Jeśli zmienił się adres IP, popraw rekord DNS.
+:::
+
+Da się też użyć kopii z wersji 0.5: ich części są grupowane w uruchomienia po czasie.
 
 ## Tylko jedna aplikacja, tylko jej dane
 

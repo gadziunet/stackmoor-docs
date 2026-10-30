@@ -19,9 +19,17 @@ What happens:
 
 The output is shown live and saved in the stack's **History**.
 
+## Backup runs
+
+**Settings → Backups** lists backups by **run**: one nightly run contains every stack and the panel's own settings; a backup of a single stack or a backup before an update is a run of its own. Open a run to see its stacks – including ones you have deleted since – and restore any of them.
+
+## Restore all stacks of a run
+
+Open a run and click **Restore all stacks**. Every stack of that run is restored one after another, exactly as above. The panel's own settings stay as they are.
+
 ## Restore a deleted stack
 
-**Settings → Backups** lists the backups of all stacks, including ones you have deleted. Click **Restore** there.
+Open a run in **Settings → Backups** that still contains the stack, and click **Restore** next to it.
 
 ## Make a copy (clone)
 
@@ -33,7 +41,26 @@ The copy won't start if its `compose.yaml` uses the same published ports or `con
 
 ## Restore everything on a new server
 
-Restoring the whole server – the panel's settings and all stacks at once – will come with the setup wizard. The panel's settings are already included in every backup, so backups made today can be used for it.
+When a server dies, install Stackmoor on a new one ([Linux](/start/install/) or [Unraid](/start/unraid/)) and open the panel. Instead of creating an account:
+
+1. click **Restore a server from a backup**,
+2. enter the storage (provider, address, bucket, folder, keys) and the **encryption password** of the old server, and click **Connect**,
+3. choose a backup – only complete runs are offered (they contain the panel's settings),
+4. click **Restore this backup** and follow the progress.
+
+Stackmoor restores, in this order:
+
+- the panel's settings: your administrator account (with its password), backup schedule and retention, local domains and DNS keys,
+- every stack of that run, with its databases,
+- Caddy with its certificates, if you used local domains.
+
+Then log in with your **previous** account.
+
+:::tip
+The new server may use a different stacks folder – stacks are restored into the folder of the new installation. Point your DNS record to the new server's IP if it changed.
+:::
+
+Backups made by version 0.5 can be used too: their snapshots are grouped into runs by time.
 
 ## Only one app, only its data
 
