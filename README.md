@@ -16,8 +16,4 @@ npm run build     # static site in dist/
 
 Requires Node 22 or newer.
 
-## Publish
-
-Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`). One-time setup: **Settings → Pages → Source: GitHub Actions**, custom domain `docs.stackmoor.dev`, and a DNS record `CNAME docs → gadziunet.github.io`.
-
 Fonts: IBM Plex Sans and IBM Plex Mono, self-hosted (SIL Open Font License, `public/fonts/OFL.txt`).
