@@ -24,10 +24,6 @@ Open that address and create the administrator account – it is the only accoun
 
 Moving from an old server? Choose **Restore a server from a backup** instead – see [Restore everything on a new server](/backups/restore/#restore-everything-on-a-new-server).
 
-:::tip[Logged in as root?]
-On a fresh Debian you are often logged in as `root` and `sudo` is not installed. Then simply leave out `sudo`: `curl … | bash`.
-:::
-
 ## Options
 
 Set them in front of `bash`, e.g. `curl … | sudo PORT=8080 bash`:

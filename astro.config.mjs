@@ -24,6 +24,7 @@ export default defineConfig({
 				{ tag: 'link', attrs: { rel: 'preload', href: '/fonts/IBMPlexSans-Regular.woff', as: 'font', type: 'font/woff', crossorigin: '' } },
 			],
 			sidebar: [
+				'about',
 				{
 					label: 'Getting started',
 					translations: { pl: 'Pierwsze kroki' },
