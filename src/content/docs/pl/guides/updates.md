@@ -19,9 +19,11 @@ Stack z nowym obrazem ma strzałkę na liście i ramkę z listą obrazów. Otwó
 
 Jeśli [kopie zapasowe](/pl/backups/setup/) są skonfigurowane, najpierw robi się kopia stacka. Jeśli się nie uda, aktualizacja się nie wykona.
 
-## Aktualizacja Caddy
+## Caddy aktualizuje się razem z panelem
 
-Jeśli używasz [domen lokalnych](/pl/guides/local-domains/), sprawdzanie obejmuje też kontener Caddy. Gdy wyjdzie nowy obraz Caddy, **Ustawienia → Aktualizacje** pokazują kartę **Caddy** – kliknij **Aktualizuj Caddy**. Nowy obraz zostanie pobrany, a kontener odtworzony; certyfikaty zostają, a adresy są niedostępne tylko przez kilka sekund.
+Jeśli używasz [domen lokalnych](/pl/guides/local-domains/), nie ma nic osobnego do aktualizowania. Każde wydanie Stackmoor ma własny obraz Caddy (z najnowszymi poprawkami Caddy z chwili wydania), a po aktualizacji panel sam przełącza na niego Caddy. Certyfikaty zostają, a adresy są niedostępne tylko przez kilka sekund.
+
+Jeśli nowego obrazu Caddy nie da się pobrać (np. bez internetu), obecny Caddy działa dalej, **Ustawienia → Domeny** pokazują informację, a panel próbuje ponownie co kilka godzin.
 
 ## Aktualizacja Stackmoor
 

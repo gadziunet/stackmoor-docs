@@ -7,7 +7,9 @@ Gdy [domeny lokalne](/pl/guides/local-domains/) działają, sam panel też może
 
 ## Nadaj panelowi adres
 
-**Ustawienia → Domeny → Adres panelu:** wpisz nazwę, np. `stackmoor`, i kliknij **Zapisz**. Panel będzie też dostępny pod `https://stackmoor.dom.example.com`.
+Gdy dodasz domenę, panel od razu dostaje adres `my` – np. `https://my.dom.example.com`.
+
+Żeby go zmienić: **Ustawienia → Domeny → Adres panelu**, wpisz inną nazwę (np. `stackmoor`) i kliknij **Zapisz**. Zostaw pole puste, żeby wyłączyć adres panelu.
 
 Zapis tylko przeładowuje konfigurację Caddy – nic nie jest pobierane ani restartowane.
 

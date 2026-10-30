@@ -7,7 +7,9 @@ Once [local domains](/guides/local-domains/) work, the panel itself can have an 
 
 ## Give the panel an address
 
-**Settings → Domains → Panel address:** enter a name, e.g. `stackmoor`, and click **Save**. The panel is then also available at `https://stackmoor.home.example.com`.
+When you add a domain, the panel gets the address `my` right away – e.g. `https://my.home.example.com`.
+
+To change it: **Settings → Domains → Panel address**, enter another name (e.g. `stackmoor`) and click **Save**. Leave the field empty to turn the panel address off.
 
 Saving only reloads Caddy's configuration – nothing is downloaded or restarted.
 

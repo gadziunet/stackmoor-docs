@@ -19,9 +19,11 @@ A stack with a new image shows an arrow in the list and a notice with the images
 
 If [backups](/backups/setup/) are set up, the stack is backed up first. If that backup fails, the update does not run.
 
-## Updating Caddy
+## Caddy updates with the panel
 
-If you use [local domains](/guides/local-domains/), the check also looks at the Caddy container. When a new Caddy image is out, **Settings → Updates** shows a **Caddy** card – click **Update Caddy**. The new image is pulled and the container recreated; certificates are kept and addresses are unavailable only for a few seconds.
+If you use [local domains](/guides/local-domains/), there is nothing separate to update. Every Stackmoor release comes with its own Caddy image (with the newest Caddy fixes at the time), and after you update the panel it switches Caddy to that image by itself. Certificates are kept; addresses are unavailable only for a few seconds.
+
+If the new Caddy image can't be downloaded (for example without internet), the current Caddy keeps working, **Settings → Domains** shows a note, and the panel tries again every few hours.
 
 ## Updating Stackmoor
 

@@ -56,6 +56,7 @@ Nazwany wolumen `db` staje się folderem `./data/db` w stacku – bez wpisywania
 | **Aktualizuj** | Pobiera nowe obrazy i odtwarza kontenery (najpierw [kopia](/pl/backups/setup/), jeśli skonfigurowana) |
 | **Zatrzymaj** | Zatrzymuje kontenery, ale ich nie usuwa |
 | **Wyłącz** | Zatrzymuje i usuwa kontenery – dane w `./data` zostają |
+| **Otwórz ↗** | Otwiera aplikację w nowej karcie: pod jej [domeną](/pl/guides/local-domains/), jeśli ją ma, a bez niej pod adresem serwera z opublikowanym portem. Gdy adresów jest kilka, pokazuje krótką listę. |
 
 Każda operacja pokazuje wyjście na żywo i zapisuje się w zakładce **Historia**.
 

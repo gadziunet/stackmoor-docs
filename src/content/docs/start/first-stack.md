@@ -56,6 +56,7 @@ The named volume `db` becomes the folder `./data/db` inside the stack – no pat
 | **Update** | Pulls new images and recreates the containers (with a [backup first](/backups/setup/), if set up) |
 | **Stop** | Stops the containers, keeps them |
 | **Shut down** | Stops and removes the containers – the data in `./data` stays |
+| **Open ↗** | Opens the app in a new tab: at its [domain](/guides/local-domains/) if it has one, otherwise at the server's address with the published port. With several addresses it shows a short list. |
 
 Every operation shows its live output and is saved in the **History** tab.
 
