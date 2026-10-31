@@ -30,7 +30,7 @@ Create a **private bucket** and a key that can only access that bucket.
 
 ## Set it up
 
-1. **Settings → Backups:** choose the provider. The address is filled in from the region.
+1. **Backups → Backup settings:** choose the provider. The address is filled in from the region.
 2. Enter the **bucket**, optionally a **folder** inside it (default `stackmoor`), the **access key** and the **secret key**.
 3. Set the **encryption password** – type one (at least 12 characters) or click **Generate**.
 4. Choose the **days** and **time**, and the [retention](/backups/retention/).
@@ -47,8 +47,8 @@ Backups run on the chosen days at the chosen time, in the time zone of the brows
 **Back up now** starts a backup immediately. A single stack can also be backed up from its **Backups** tab.
 
 <figure class="shot" data-shot="backups-settings">
-<img class="shot-light" src="/screens/en/backups-settings-light.webp" alt="Settings → Backups" width="1020" height="1300" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/backups-settings-dark.webp" alt="Settings → Backups" width="1020" height="1300" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/backups-settings-light.webp" alt="Backups → Backup settings" width="1216" height="1199" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/backups-settings-dark.webp" alt="Backups → Backup settings" width="1216" height="1199" loading="lazy" decoding="async" />
 </figure>
 
 ## Before every update
@@ -63,7 +63,7 @@ restic stores every piece of data under its SHA-256 checksum, so damaged data ca
 - **once a week** 10% of the data is downloaded and compared – over a few weeks practically everything gets checked,
 - **Verify everything** downloads and checks all data. That uses your storage's download transfer.
 
-The status at the top of **Settings → Backups** shows the last backup and the last verification.
+The summary at the top of the **Backups** tab shows the last backup, the next one, the last verification and the size of the last backup. The status bar at the bottom of every page shows when the last backup ran.
 
 ## Costs and API calls
 

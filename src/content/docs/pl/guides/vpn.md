@@ -26,15 +26,15 @@ Gdy tunel nie działa, aplikacje za nim **nie mają w ogóle internetu**. Nigdy 
 
 ## Dodaj tunel
 
-1. **Ustawienia → VPN → Dodaj tunel.**
+1. **Sieć → VPN → Dodaj tunel.**
 2. Wpisz nazwę (np. `dom`) i wklej plik WireGuard albo wybierz plik `.conf`.
 3. Kliknij **Dodaj i uruchom**. Po kilku sekundach tunel pokaże **połączony** i czas ostatniego kontaktu z serwerem.
 
 Dla bezpieczeństwa polecenia z pliku (`PostUp`, `PostDown`, …) i linie `DNS` są usuwane. Dodawany jest keepalive, żeby tunel nie zasypiał za routerem.
 
 <figure class="shot" data-shot="vpn-settings">
-<img class="shot-light" src="/screens/pl/vpn-settings-light.webp" alt="Ustawienia → VPN z dwoma tunelami" width="1020" height="1250" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/vpn-settings-dark.webp" alt="Ustawienia → VPN z dwoma tunelami" width="1020" height="1250" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/vpn-settings-light.webp" alt="Sieć → VPN z dwoma tunelami" width="996" height="766" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/vpn-settings-dark.webp" alt="Sieć → VPN z dwoma tunelami" width="996" height="766" loading="lazy" decoding="async" />
 </figure>
 
 ## Puść aplikację przez tunel
@@ -46,13 +46,13 @@ Dla bezpieczeństwa polecenia z pliku (`PostUp`, `PostDown`, …) i linie `DNS` 
 Żeby przestać używać VPN, wybierz **— bez VPN —** i zapisz.
 
 <figure class="shot" data-shot="vpn-stack">
-<img class="shot-light" src="/screens/pl/vpn-stack-light.webp" alt="Zakładka VPN w stacku" width="956" height="371" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/vpn-stack-dark.webp" alt="Zakładka VPN w stacku" width="956" height="371" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/vpn-stack-light.webp" alt="Zakładka VPN w stacku" width="956" height="374" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/vpn-stack-dark.webp" alt="Zakładka VPN w stacku" width="956" height="374" loading="lazy" decoding="async" />
 </figure>
 
 ## Stan
 
-**Ustawienia → VPN** pokazują dla każdego tunelu:
+**Sieć → VPN** pokazuje dla każdego tunelu:
 
 - **połączony** – kontakt z serwerem WireGuard w ciągu ostatnich 3 minut;
 - **łączenie…** – tunel właśnie wystartował i czeka na pierwszy kontakt;

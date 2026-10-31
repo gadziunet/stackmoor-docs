@@ -9,13 +9,13 @@ Once [local domains](/guides/local-domains/) work, the panel itself can have an 
 
 When you add a domain, the panel gets the address `my` right away – e.g. `https://my.home.example.com`.
 
-To change it: **Settings → Domains → Panel address**, enter another name (e.g. `stackmoor`) and click **Save**. Leave the field empty to turn the panel address off.
+To change it: **Settings → Panel address**, enter another name (e.g. `stackmoor`) and click **Save**. Leave the field empty to turn the panel address off.
 
 Saving only reloads Caddy's configuration – nothing is downloaded or restarted.
 
 <figure class="shot" data-shot="panel-address">
-<img class="shot-light" src="/screens/en/panel-address-light.webp" alt="Panel address" width="956" height="271" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/panel-address-dark.webp" alt="Panel address" width="956" height="271" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/panel-address-light.webp" alt="Settings → Panel address" width="996" height="234" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/panel-address-dark.webp" alt="Settings → Panel address" width="996" height="234" loading="lazy" decoding="async" />
 </figure>
 
 ## Allow the panel only at its address

@@ -13,7 +13,7 @@ Stackmoor can give every stack an address such as `cloud.home.example.com` with 
 
 ## Set it up
 
-You can do this right after installing – the panel asks *How do you want to open the panel?* after you create your account – or any time later in **Settings → Domains**.
+You can do this right after installing – the panel asks *How do you want to open the panel?* after you create your account – or any time later in the **Domains** tab.
 
 1. **Choose a domain** you own, e.g. `home.example.com`. Apps get `<name>.home.example.com`, the panel itself `my.home.example.com`.
 2. **Pick the DNS provider** and paste its API key. Keys are stored encrypted.
@@ -26,12 +26,12 @@ A stack with an address does not need to publish any port at all.
 :::
 
 <figure class="shot" data-shot="domains-form">
-<img class="shot-light" src="/screens/en/domains-form-light.webp" alt="Settings → Domains: domain, DNS provider, server IP and DNS records" width="956" height="685" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/domains-form-dark.webp" alt="Settings → Domains: domain, DNS provider, server IP and DNS records" width="956" height="685" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/domains-form-light.webp" alt="The Domains tab: domain, DNS provider, server IP and DNS records" width="732" height="718" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/domains-form-dark.webp" alt="The Domains tab: domain, DNS provider, server IP and DNS records" width="732" height="718" loading="lazy" decoding="async" />
 </figure>
 <figure class="shot" data-shot="stack-domain">
-<img class="shot-light" src="/screens/en/stack-domain-light.webp" alt="A stack’s Domain tab with an address" width="956" height="335" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/stack-domain-dark.webp" alt="A stack’s Domain tab with an address" width="956" height="335" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/stack-domain-light.webp" alt="A stack’s Domain tab with an address" width="956" height="332" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/stack-domain-dark.webp" alt="A stack’s Domain tab with an address" width="956" height="332" loading="lazy" decoding="async" />
 </figure>
 
 ## The DNS records are added for you
@@ -42,7 +42,7 @@ Your addresses need two DNS records pointing to the server's IP: `home.example.c
 
 With the other providers, the form shows the records to add by hand: `A` records for `home.example.com` and `*.home.example.com` pointing to the server's IP. A local IP like `192.168.1.50` is fine. If you prefer to manage the records yourself, untick *Add the DNS records automatically*.
 
-**When the server's address changes** (for example a new IP from your router), Stackmoor notices it when the server starts, updates the records and shows a note in **Settings → Domains**.
+**When the server's address changes** (for example a new IP from your router), Stackmoor notices it when the server starts, updates the records and shows a note in the **Domains** tab.
 
 The certificate covers both names too, and the bare domain leads to the panel's address.
 
@@ -62,8 +62,8 @@ Some providers need extra time until all their name servers have the record. Set
 The **Status** card refreshes by itself until the certificate is there. If an attempt failed (for example *No TXT record found*), Caddy tries again on its own – or click **Get the certificate again** to start a new attempt right away.
 
 <figure class="shot" data-shot="domains-status">
-<img class="shot-light" src="/screens/en/domains-status-light.webp" alt="Status: Caddy, the certificate and the panel address" width="956" height="224" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/domains-status-dark.webp" alt="Status: Caddy, the certificate and the panel address" width="956" height="224" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/domains-status-light.webp" alt="Status: Caddy, the certificate and the panel address" width="464" height="248" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/domains-status-dark.webp" alt="Status: Caddy, the certificate and the panel address" width="464" height="248" loading="lazy" decoding="async" />
 </figure>
 
 ## DNS providers

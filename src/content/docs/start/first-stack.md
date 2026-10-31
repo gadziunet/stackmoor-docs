@@ -5,6 +5,19 @@ description: Create, start and manage a Docker Compose stack in Stackmoor.
 
 A **stack** is one app described by a `compose.yaml` – for example Nextcloud with its database. Each stack lives in its own folder: `/opt/stacks/<name>/`.
 
+## Around the panel
+
+- **Top menu:** Stacks · Backups · Domains · Network · Settings. On a phone it moves to the bottom of the screen.
+- **Dashboard (Stacks):** a card for every stack – its state, address and last backup – with **Restart** (or **Start**, or **Update** when a new image is waiting) and **Open**. Under the cards: [proxies](/guides/proxy/) and recent events.
+- **Status bar** at the bottom: Caddy, the certificate, VPN tunnels, proxies, the last backup and the version. Click an item to go to its page.
+- **Search** (Ctrl K / ⌘ K): type part of a stack’s name; Enter opens the first match.
+- **Account menu** (top right): **Account settings** (password and language), the **Light / Dark** theme and **Log out**.
+
+<figure class="shot" data-shot="overview">
+<img class="shot-light" src="/screens/en/overview-light.webp" alt="The dashboard: stack cards, proxies, recent events and the status bar" width="1280" height="860" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/overview-dark.webp" alt="The dashboard: stack cards, proxies, recent events and the status bar" width="1280" height="860" loading="lazy" decoding="async" />
+</figure>
+
 ## Create a stack
 
 1. Click **+ New stack**.
@@ -16,11 +29,6 @@ A **stack** is one app described by a `compose.yaml` – for example Nextcloud w
 Before saving, the file is checked with `docker compose config`. A broken file is never saved – you see the error instead.
 
 After saving, the panel shows exactly what it changed – usually where app data will be stored (see [Automatic volumes](/guides/automatic-volumes/)).
-
-<figure class="shot" data-shot="overview">
-<img class="shot-light" src="/screens/en/overview-light.webp" alt="The Stackmoor panel with a stack open" width="1280" height="860" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/overview-dark.webp" alt="The Stackmoor panel with a stack open" width="1280" height="860" loading="lazy" decoding="async" />
-</figure>
 
 ## Example: Miniflux with PostgreSQL
 
@@ -61,13 +69,13 @@ The named volume `db` becomes the folder `./data/db` inside the stack – no pat
 | **Update** | Pulls new images and recreates the containers (with a [backup first](/backups/setup/), if set up) |
 | **Stop** | Stops the containers, keeps them |
 | **Shut down** | Stops and removes the containers – the data in `./data` stays |
-| **Open ↗** | Opens the app in a new tab: at its [domain](/guides/local-domains/) if it has one, otherwise at the server's address with the published port. With several addresses it shows a short list. |
+| **Open app ↗** | Opens the app in a new tab: at its [domain](/guides/local-domains/) if it has one, otherwise at the server's address with the published port. With several addresses it shows a short list. |
 
-Every operation shows its live output and is saved in the **History** tab.
+Every operation shows its live output and is saved in the **History** tab. Next to the editor you see the stack’s containers, its addresses and its latest backups; the list of all stacks stays on the left.
 
 <figure class="shot" data-shot="stack">
-<img class="shot-light" src="/screens/en/stack-light.webp" alt="A stack: buttons and the compose editor" width="1020" height="725" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/stack-dark.webp" alt="A stack: buttons and the compose editor" width="1020" height="725" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/stack-light.webp" alt="A stack: the list of stacks, buttons, the compose editor and containers, addresses and backups" width="1280" height="860" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/stack-dark.webp" alt="A stack: the list of stacks, buttons, the compose editor and containers, addresses and backups" width="1280" height="860" loading="lazy" decoding="async" />
 </figure>
 
 ## Ports

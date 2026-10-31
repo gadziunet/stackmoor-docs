@@ -21,14 +21,14 @@ Po zapisie panel zawsze pokazuje listę zmian. Komentarze w pliku zostają.
 ## Czego panel nie rusza
 
 - Ścieżek systemowych, np. `/var/run/docker.sock`, `/dev`, `/etc/localtime`.
-- Ścieżek hosta z **listy wyjątków** w **Ustawienia → Ogólne** – domyślnie `/mnt` i `/media`. To miejsce na biblioteki multimediów i inne duże foldery. **Nie** trafiają do kopii.
+- Ścieżek hosta z **listy wyjątków** w **Ustawienia → Foldery** – domyślnie `/mnt` i `/media`. To miejsce na biblioteki multimediów i inne duże foldery. **Nie** trafiają do kopii.
 - Ścieżek ze zmiennymi `${ZMIENNA}`.
 - Ścieżek względnych w stacku, np. `./config`.
 - Wolumenów oznaczonych `external`.
 
 ## Właściciel folderów
 
-Foldery powstają przed startem stacka, z właścicielem `PUID:PGID` – domyślnie `1000:1000`, do zmiany w **Ustawienia → Ogólne**. Dzięki temu nie należą do roota.
+Foldery powstają przed startem stacka, z właścicielem `PUID:PGID` – domyślnie `1000:1000`, do zmiany w **Ustawienia → Foldery**. Dzięki temu nie należą do roota.
 
 ## Pojedyncze pliki
 

@@ -39,7 +39,7 @@ Stack montuje pojedynczy plik, którego jeszcze nie ma. Najpierw utwórz go w fo
 
 ### Certyfikat „jeszcze nie wydany”
 
-Pierwszy certyfikat może potrwać minutę lub dwie (netcup: około 15 minut). Kliknij **Odśwież** w **Ustawienia → Domeny**. Jeśli pojawia się tam błąd, zwykle oznacza zły klucz API albo brak uprawnień do strefy DNS.
+Pierwszy certyfikat może potrwać minutę lub dwie (netcup: około 15 minut). Kliknij **Odśwież** w zakładce **Domeny**. Jeśli pojawia się tam błąd, zwykle oznacza zły klucz API albo brak uprawnień do strefy DNS.
 
 ### Adres się nie otwiera
 

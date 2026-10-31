@@ -30,7 +30,7 @@ Utwórz **prywatny bucket** i klucz, który ma dostęp tylko do niego.
 
 ## Konfiguracja
 
-1. **Ustawienia → Backup:** wybierz dostawcę. Adres uzupełni się na podstawie regionu.
+1. **Kopie → Ustawienia kopii:** wybierz dostawcę. Adres uzupełni się na podstawie regionu.
 2. Wpisz **bucket**, opcjonalnie **folder w buckecie** (domyślnie `stackmoor`), **klucz dostępu** i **klucz tajny**.
 3. Ustaw **hasło szyfrowania** – wpisz własne (co najmniej 12 znaków) albo kliknij **Wygeneruj**.
 4. Wybierz **dni** i **godzinę** oraz [rotację](/pl/backups/retention/).
@@ -47,8 +47,8 @@ Kopie robią się w wybrane dni o wybranej godzinie, w strefie czasowej przeglą
 **Zrób kopię teraz** uruchamia kopię od razu. Pojedynczy stack można skopiować z jego zakładki **Kopie**.
 
 <figure class="shot" data-shot="backups-settings">
-<img class="shot-light" src="/screens/pl/backups-settings-light.webp" alt="Ustawienia → Kopie zapasowe" width="1020" height="1300" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/backups-settings-dark.webp" alt="Ustawienia → Kopie zapasowe" width="1020" height="1300" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/backups-settings-light.webp" alt="Kopie → Ustawienia kopii" width="1216" height="1199" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/backups-settings-dark.webp" alt="Kopie → Ustawienia kopii" width="1216" height="1199" loading="lazy" decoding="async" />
 </figure>
 
 ## Przed każdą aktualizacją
@@ -63,7 +63,7 @@ restic zapisuje każdy kawałek danych pod jego sumą SHA-256, więc uszkodzenie
 - **raz w tygodniu** pobieranych i porównywanych jest 10% danych – w ciągu kilku tygodni sprawdzone zostaje praktycznie wszystko,
 - **Zweryfikuj wszystko** pobiera i sprawdza wszystkie dane. Zużywa transfer pobierania z magazynu.
 
-Ramka **Stan** na górze **Ustawienia → Backup** pokazuje ostatnią kopię i ostatnią weryfikację.
+Podsumowanie na górze zakładki **Kopie** pokazuje ostatnią kopię, następną, ostatnią weryfikację i rozmiar ostatniej kopii. Pasek stanu na dole każdej strony pokazuje, kiedy była ostatnia kopia.
 
 ## Koszty i zapytania API
 

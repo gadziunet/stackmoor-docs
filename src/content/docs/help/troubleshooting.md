@@ -39,7 +39,7 @@ The stack mounts a single file that does not exist yet. Create it in the stack f
 
 ### The certificate is “not issued yet”
 
-The first certificate can take a minute or two (netcup: about 15 minutes). Click **Refresh** in **Settings → Domains**. If an error appears there, it usually means a wrong API key or missing rights for the DNS zone.
+The first certificate can take a minute or two (netcup: about 15 minutes). Click **Refresh** in the **Domains** tab. If an error appears there, it usually means a wrong API key or missing rights for the DNS zone.
 
 ### The address doesn't open
 

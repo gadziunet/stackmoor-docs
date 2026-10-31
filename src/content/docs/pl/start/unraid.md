@@ -39,4 +39,4 @@ Panel nie może podmienić kontenera, którym zarządza Unraid. Gdy pojawi się 
 
 ## Domeny lokalne na Unraid
 
-Panel Unraid zajmuje porty 80 i 443. Jeśli konfigurujesz [domeny lokalne](/pl/guides/local-domains/), wybierz dla Caddy inne porty w **Ustawienia → Domeny → Zaawansowane: porty** – albo najpierw przenieś panel Unraid na inne porty.
+Panel Unraid zajmuje porty 80 i 443. Jeśli konfigurujesz [domeny lokalne](/pl/guides/local-domains/), wybierz dla Caddy inne porty w zakładce **Domeny** w **Zaawansowane: porty** – albo najpierw przenieś panel Unraid na inne porty.

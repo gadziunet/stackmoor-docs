@@ -3,7 +3,7 @@ title: Rotacja
 description: Ile kopii trzyma Stackmoor – z gotowymi przykładami.
 ---
 
-Po każdej kopii starsze są usuwane według trzech liczb w **Ustawienia → Backup → Rotacja**:
+Po każdej kopii starsze są usuwane według trzech liczb w **Kopie → Ustawienia kopii → Rotacja**:
 
 | Ustawienie | Zostawia |
 |---|---|

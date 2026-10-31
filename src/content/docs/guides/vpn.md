@@ -26,15 +26,15 @@ If the tunnel is down, the apps behind it have **no internet at all**. They neve
 
 ## Add a tunnel
 
-1. **Settings → VPN → Add a tunnel.**
+1. **Network → VPN → Add a tunnel.**
 2. Enter a name (e.g. `home`) and paste your WireGuard config, or choose the `.conf` file.
 3. Click **Add and start**. After a few seconds the tunnel shows **connected** and the time of the last contact with the server.
 
 For safety, commands in the file (`PostUp`, `PostDown`, …) and `DNS` lines are removed. A keepalive is added so the tunnel stays open behind your router.
 
 <figure class="shot" data-shot="vpn-settings">
-<img class="shot-light" src="/screens/en/vpn-settings-light.webp" alt="Settings → VPN with two tunnels" width="1020" height="1250" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/vpn-settings-dark.webp" alt="Settings → VPN with two tunnels" width="1020" height="1250" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/vpn-settings-light.webp" alt="Network → VPN with two tunnels" width="996" height="766" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/vpn-settings-dark.webp" alt="Network → VPN with two tunnels" width="996" height="766" loading="lazy" decoding="async" />
 </figure>
 
 ## Send an app through it
@@ -46,13 +46,13 @@ For safety, commands in the file (`PostUp`, `PostDown`, …) and `DNS` lines are
 To stop using the VPN, choose **— no VPN —** and save.
 
 <figure class="shot" data-shot="vpn-stack">
-<img class="shot-light" src="/screens/en/vpn-stack-light.webp" alt="A stack’s VPN tab" width="956" height="371" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/en/vpn-stack-dark.webp" alt="A stack’s VPN tab" width="956" height="371" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/en/vpn-stack-light.webp" alt="A stack’s VPN tab" width="956" height="374" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/vpn-stack-dark.webp" alt="A stack’s VPN tab" width="956" height="374" loading="lazy" decoding="async" />
 </figure>
 
 ## Status
 
-**Settings → VPN** shows for each tunnel:
+**Network → VPN** shows for each tunnel:
 
 - **connected** – contact with the WireGuard server in the last 3 minutes;
 - **connecting…** – just started, waiting for the first contact;

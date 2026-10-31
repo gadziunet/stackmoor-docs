@@ -13,7 +13,7 @@ Stackmoor może nadać każdemu stackowi adres typu `chmura.dom.example.com` z p
 
 ## Konfiguracja
 
-Możesz to zrobić zaraz po instalacji – po założeniu konta panel pyta *Jak chcesz otwierać panel?* – albo w każdej chwili w **Ustawieniach → Domeny**.
+Możesz to zrobić zaraz po instalacji – po założeniu konta panel pyta *Jak chcesz otwierać panel?* – albo w każdej chwili w zakładce **Domeny**.
 
 1. **Wybierz domenę**, którą masz, np. `dom.example.com`. Aplikacje dostaną `<nazwa>.dom.example.com`, a sam panel `my.dom.example.com`.
 2. **Wybierz dostawcę DNS** i wklej klucz API. Klucze są zapisywane w formie zaszyfrowanej.
@@ -26,12 +26,12 @@ Stack z adresem nie musi publikować żadnego portu.
 :::
 
 <figure class="shot" data-shot="domains-form">
-<img class="shot-light" src="/screens/pl/domains-form-light.webp" alt="Ustawienia → Domeny: domena, dostawca DNS, IP serwera i rekordy DNS" width="956" height="685" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/domains-form-dark.webp" alt="Ustawienia → Domeny: domena, dostawca DNS, IP serwera i rekordy DNS" width="956" height="685" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/domains-form-light.webp" alt="Zakładka Domeny: domena, dostawca DNS, IP serwera i rekordy DNS" width="732" height="718" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/domains-form-dark.webp" alt="Zakładka Domeny: domena, dostawca DNS, IP serwera i rekordy DNS" width="732" height="718" loading="lazy" decoding="async" />
 </figure>
 <figure class="shot" data-shot="stack-domain">
-<img class="shot-light" src="/screens/pl/stack-domain-light.webp" alt="Zakładka Domena w stacku z adresem" width="956" height="335" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/stack-domain-dark.webp" alt="Zakładka Domena w stacku z adresem" width="956" height="335" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/stack-domain-light.webp" alt="Zakładka Domena w stacku z adresem" width="956" height="332" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/stack-domain-dark.webp" alt="Zakładka Domena w stacku z adresem" width="956" height="332" loading="lazy" decoding="async" />
 </figure>
 
 ## Rekordy DNS dodają się same
@@ -42,7 +42,7 @@ Twoje adresy potrzebują dwóch rekordów DNS wskazujących na IP serwera: `dom.
 
 U pozostałych dostawców formularz pokazuje rekordy do dodania ręcznie: rekordy `A` dla `dom.example.com` i `*.dom.example.com` wskazujące na IP serwera. Lokalny adres, np. `192.168.1.50`, jest w porządku. Jeśli wolisz zarządzać rekordami sam, odznacz *Dodaj rekordy DNS automatycznie*.
 
-**Gdy adres serwera się zmieni** (np. router da nowy IP), Stackmoor zauważy to przy starcie serwera, zaktualizuje rekordy i pokaże informację w **Ustawieniach → Domeny**.
+**Gdy adres serwera się zmieni** (np. router da nowy IP), Stackmoor zauważy to przy starcie serwera, zaktualizuje rekordy i pokaże informację w zakładce **Domeny**.
 
 Certyfikat obejmuje obie nazwy, a sama domena prowadzi do adresu panelu.
 
@@ -62,8 +62,8 @@ Niektórzy dostawcy potrzebują dodatkowego czasu, aż rekord trafi na wszystkie
 Karta **Stan** odświeża się sama, dopóki nie ma certyfikatu. Jeśli próba się nie udała (np. *No TXT record found*), Caddy spróbuje ponownie sam – albo kliknij **Pobierz certyfikat ponownie**, żeby od razu zacząć nową próbę.
 
 <figure class="shot" data-shot="domains-status">
-<img class="shot-light" src="/screens/pl/domains-status-light.webp" alt="Stan: Caddy, certyfikat i adres panelu" width="956" height="224" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/domains-status-dark.webp" alt="Stan: Caddy, certyfikat i adres panelu" width="956" height="224" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/domains-status-light.webp" alt="Stan: Caddy, certyfikat i adres panelu" width="464" height="248" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/domains-status-dark.webp" alt="Stan: Caddy, certyfikat i adres panelu" width="464" height="248" loading="lazy" decoding="async" />
 </figure>
 
 ## Dostawcy DNS

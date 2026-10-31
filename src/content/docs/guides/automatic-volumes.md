@@ -21,14 +21,14 @@ The panel always lists the changes after saving. Comments in your file are kept.
 ## What is left alone
 
 - System paths such as `/var/run/docker.sock`, `/dev`, `/etc/localtime`.
-- Host paths on the **allow-list** in **Settings → General** – by default `/mnt` and `/media`. Use it for media libraries and other large folders. They are **not** backed up.
+- Host paths on the **allow-list** in **Settings → Folders** – by default `/mnt` and `/media`. Use it for media libraries and other large folders. They are **not** backed up.
 - Paths that use `${VARIABLES}`.
 - Relative paths inside the stack, like `./config`.
 - Volumes marked `external`.
 
 ## Owners
 
-Folders are created before the stack starts, owned by `PUID:PGID` – by default `1000:1000`, changeable in **Settings → General**. That way they don't end up owned by root.
+Folders are created before the stack starts, owned by `PUID:PGID` – by default `1000:1000`, changeable in **Settings → Folders**. That way they don't end up owned by root.
 
 ## Single files
 

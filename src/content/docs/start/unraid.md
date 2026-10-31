@@ -39,4 +39,4 @@ The panel can't replace a container that Unraid manages. When an update is avail
 
 ## Local domains on Unraid
 
-Unraid's own web UI uses ports 80 and 443. If you set up [local domains](/guides/local-domains/), choose other ports for Caddy under **Settings → Domains → Advanced: ports** – or move Unraid's web UI to other ports first.
+Unraid's own web UI uses ports 80 and 443. If you set up [local domains](/guides/local-domains/), choose other ports for Caddy in the **Domains** tab under **Advanced: ports** – or move Unraid's web UI to other ports first.

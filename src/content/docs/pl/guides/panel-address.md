@@ -9,13 +9,13 @@ Gdy [domeny lokalne](/pl/guides/local-domains/) działają, sam panel też może
 
 Gdy dodasz domenę, panel od razu dostaje adres `my` – np. `https://my.dom.example.com`.
 
-Żeby go zmienić: **Ustawienia → Domeny → Adres panelu**, wpisz inną nazwę (np. `stackmoor`) i kliknij **Zapisz**. Zostaw pole puste, żeby wyłączyć adres panelu.
+Żeby go zmienić: **Ustawienia → Adres panelu**, wpisz inną nazwę (np. `stackmoor`) i kliknij **Zapisz**. Zostaw pole puste, żeby wyłączyć adres panelu.
 
 Zapis tylko przeładowuje konfigurację Caddy – nic nie jest pobierane ani restartowane.
 
 <figure class="shot" data-shot="panel-address">
-<img class="shot-light" src="/screens/pl/panel-address-light.webp" alt="Adres panelu" width="956" height="291" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/panel-address-dark.webp" alt="Adres panelu" width="956" height="291" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/panel-address-light.webp" alt="Ustawienia → Adres panelu" width="996" height="254" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/panel-address-dark.webp" alt="Ustawienia → Adres panelu" width="996" height="254" loading="lazy" decoding="async" />
 </figure>
 
 ## Panel tylko pod tym adresem

@@ -3,7 +3,7 @@ title: Retention
 description: How many backups Stackmoor keeps, with ready-made examples.
 ---
 
-After every backup, older backups are removed according to three numbers in **Settings → Backups → Retention**:
+After every backup, older backups are removed according to three numbers in **Backups → Backup settings → Retention**:
 
 | Setting | Keeps |
 |---|---|
