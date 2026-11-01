@@ -3,7 +3,7 @@ title: Updates
 description: How Stackmoor checks for new versions of itself and of your stacks' images.
 ---
 
-Stackmoor tells you when something new is available. **Nothing is ever updated without your confirmation.**
+Stackmoor tells you when something new is available. Stacks update by themselves only if you turn on [automatic updates](#automatic-updates); the panel itself always waits for your confirmation.
 
 ## Settings
 
@@ -23,6 +23,33 @@ Stackmoor tells you when something new is available. **Nothing is ever updated w
 A stack with a new image is marked **Update** on the dashboard and gets an arrow in the stack list. Click **Update** on its card (or open it and click **Update**): new images are pulled and the containers recreated. Data in `./data` is kept.
 
 If [backups](/backups/setup/) are set up, the stack is backed up first. If that backup fails, the update does not run.
+
+## Automatic updates
+
+Like in Cloudron, stacks can update themselves. It is **off** by default. Turn it on in **Settings → Updates → Automatic stack updates**:
+
+- choose the days and the time (e.g. every day at 4:00 – after the nightly backup),
+- untick the stacks you want to update yourself, e.g. databases. New stacks are included.
+
+<figure class="shot" data-shot="auto-updates">
+<img class="shot-light" src="/screens/en/auto-updates-light.webp" alt="Automatic stack updates" width="996" height="863" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/auto-updates-dark.webp" alt="Automatic stack updates" width="996" height="863" loading="lazy" decoding="async" />
+</figure>
+
+What happens at that time, one stack after another:
+
+1. Only **running** stacks with a newer image are updated. Stopped stacks are skipped.
+2. If [backups](/backups/setup/) are set up, the stack is backed up first. If the backup fails, the stack isn't updated.
+3. New images are pulled and the containers recreated – the same as the **Update** button.
+4. The panel watches the containers for a while. If one stops with an error, keeps restarting or reports *unhealthy*, the stack **goes back to the images it had before**.
+
+Every run is listed under **Latest automatic updates** and in the stack's history (*Automatic update*, *Back to the previous version*). **Run now** starts a run right away.
+
+The panel itself is never updated automatically – it always waits for your confirmation.
+
+:::note
+Going back restores the previous **images**, not the data. If a new version already changed its database and then failed, restore the backup made before the update in the stack's **Backups** tab.
+:::
 
 ## Caddy updates with the panel
 

@@ -3,7 +3,7 @@ title: Aktualizacje
 description: Jak Stackmoor sprawdza nowe wersje siebie i obrazów Twoich stacków.
 ---
 
-Stackmoor informuje, gdy pojawi się coś nowego. **Nic nie jest aktualizowane bez Twojego potwierdzenia.**
+Stackmoor informuje, gdy pojawi się coś nowego. Stacki aktualizują się same tylko po włączeniu [automatycznych aktualizacji](#automatyczne-aktualizacje); sam panel zawsze czeka na Twoje potwierdzenie.
 
 ## Ustawienia
 
@@ -14,8 +14,8 @@ Stackmoor informuje, gdy pojawi się coś nowego. **Nic nie jest aktualizowane b
 - **Sprawdź teraz** – sprawdza od razu.
 
 <figure class="shot" data-shot="updates">
-<img class="shot-light" src="/screens/pl/updates-light.webp" alt="Ustawienia → Aktualizacje" width="996" height="686" loading="lazy" decoding="async" />
-<img class="shot-dark" src="/screens/pl/updates-dark.webp" alt="Ustawienia → Aktualizacje" width="996" height="686" loading="lazy" decoding="async" />
+<img class="shot-light" src="/screens/pl/updates-light.webp" alt="Ustawienia → Aktualizacje" width="996" height="705" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/updates-dark.webp" alt="Ustawienia → Aktualizacje" width="996" height="705" loading="lazy" decoding="async" />
 </figure>
 
 ## Aktualizacja stacka
@@ -23,6 +23,33 @@ Stackmoor informuje, gdy pojawi się coś nowego. **Nic nie jest aktualizowane b
 Stack z nowym obrazem ma na pulpicie oznaczenie **Aktualizacja**, a na liście stacków strzałkę. Kliknij **Aktualizuj** na jego karcie (albo otwórz go i kliknij **Aktualizuj**): nowe obrazy zostaną pobrane, a kontenery odtworzone. Dane w `./data` zostają.
 
 Jeśli [kopie zapasowe](/pl/backups/setup/) są skonfigurowane, najpierw robi się kopia stacka. Jeśli się nie uda, aktualizacja się nie wykona.
+
+## Automatyczne aktualizacje
+
+Jak w Cloudronie, stacki mogą aktualizować się same. Domyślnie jest to **wyłączone**. Włączysz to w **Ustawienia → Aktualizacje → Automatyczne aktualizacje stacków**:
+
+- wybierz dni i godzinę (np. codziennie o 4:00 – po nocnej kopii),
+- odznacz stacki, które wolisz aktualizować sam, np. bazy danych. Nowe stacki są zaznaczone.
+
+<figure class="shot" data-shot="auto-updates">
+<img class="shot-light" src="/screens/pl/auto-updates-light.webp" alt="Automatyczne aktualizacje stacków" width="996" height="885" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/auto-updates-dark.webp" alt="Automatyczne aktualizacje stacków" width="996" height="885" loading="lazy" decoding="async" />
+</figure>
+
+Co dzieje się o tej porze, stack po stacku:
+
+1. Aktualizowane są tylko **działające** stacki z nowszym obrazem. Zatrzymane są pomijane.
+2. Jeśli [kopie zapasowe](/pl/backups/setup/) są skonfigurowane, najpierw robi się kopia stacka. Jeśli się nie uda, stack nie jest aktualizowany.
+3. Pobierane są nowe obrazy i odtwarzane kontenery – tak samo jak przyciskiem **Aktualizuj**.
+4. Panel obserwuje kontenery przez chwilę. Jeśli któryś zatrzyma się z błędem, ciągle się restartuje albo zgłasza *unhealthy*, stack **wraca do obrazów, które miał wcześniej**.
+
+Każde uruchomienie widać w **Ostatnie automatyczne aktualizacje** i w historii stacka (*Automatyczna aktualizacja*, *Powrót do poprzedniej wersji*). **Uruchom teraz** startuje od razu.
+
+Sam panel nigdy nie aktualizuje się automatycznie – zawsze czeka na Twoje potwierdzenie.
+
+:::note
+Powrót przywraca poprzednie **obrazy**, nie dane. Jeśli nowa wersja zdążyła zmienić swoją bazę danych i potem się wywaliła, przywróć kopię zrobioną przed aktualizacją w zakładce **Kopie** stacka.
+:::
 
 ## Caddy aktualizuje się razem z panelem
 

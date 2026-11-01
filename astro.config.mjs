@@ -40,6 +40,7 @@ export default defineConfig({
 						'guides/vpn',
 						'guides/panel-address',
 						'guides/updates',
+						'guides/server',
 					],
 				},
 				{

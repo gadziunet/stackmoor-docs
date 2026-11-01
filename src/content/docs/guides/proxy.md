@@ -47,4 +47,5 @@ There is no **Restart** or backup for a proxy: Stackmoor does not manage that se
 
 - The target must be reachable **from the server** running Stackmoor – it is the server that connects, not your browser.
 - WebSockets work without any setting, so web consoles (Proxmox noVNC, Home Assistant) work too.
+- When the target redirects to its own address (Unraid sends you to `http://192.168.1.10:8086/Dashboard`), Stackmoor turns that back into your address – just like Nginx Proxy Manager. Redirects to other addresses are left alone.
 - A stack running with `network_mode: host` doesn't need a proxy: give it an address in its own **Domain** tab with the port it listens on.

@@ -47,4 +47,5 @@ Proxy nie ma przycisku **Restart** ani kopii: Stackmoor nie zarządza tym serwer
 
 - Cel musi być osiągalny **z serwera**, na którym działa Stackmoor – to serwer się łączy, nie Twoja przeglądarka.
 - WebSockety działają bez ustawień, więc konsole w przeglądarce (noVNC w Proxmoxie, Home Assistant) też działają.
+- Gdy cel przekierowuje na swój własny adres (Unraid odsyła na `http://192.168.1.10:8086/Dashboard`), Stackmoor zamienia go z powrotem na Twój adres – tak samo jak Nginx Proxy Manager. Przekierowania na inne adresy zostają bez zmian.
 - Stack z `network_mode: host` nie potrzebuje proxy: nadaj mu adres w jego zakładce **Domena**, z portem, na którym słucha.
