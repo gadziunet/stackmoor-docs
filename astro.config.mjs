@@ -41,6 +41,7 @@ export default defineConfig({
 						'guides/panel-address',
 						'guides/updates',
 						'guides/server',
+						'guides/security',
 					],
 				},
 				{
