@@ -95,3 +95,4 @@ ports:
 - [ ] Backups set up, the backup password kept outside the server
 - [ ] SSH with a key, no root login
 - [ ] Apps publish only the ports they need
+- [ ] [Notifications](/guides/notifications/) set up – you hear about a failed backup or a stopped stack right away

@@ -95,3 +95,4 @@ ports:
 - [ ] Kopie zapasowe skonfigurowane, hasło do kopii trzymane poza serwerem
 - [ ] SSH kluczem, bez logowania jako root
 - [ ] Aplikacje publikują tylko potrzebne porty
+- [ ] [Powiadomienia](/pl/guides/notifications/) ustawione – od razu wiesz o nieudanej kopii albo zatrzymanym stacku
