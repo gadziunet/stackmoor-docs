@@ -37,6 +37,7 @@ export default defineConfig({
 						'guides/automatic-volumes',
 						'guides/local-domains',
 						'guides/proxy',
+						'guides/pangolin',
 						'guides/vpn',
 						'guides/panel-address',
 						'guides/updates',

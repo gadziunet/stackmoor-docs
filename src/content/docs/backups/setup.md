@@ -51,6 +51,18 @@ Backups run on the chosen days at the chosen time, in the time zone of the brows
 <img class="shot-dark" src="/screens/en/backups-settings-dark.webp" alt="Backups → Backup settings" width="1216" height="1199" loading="lazy" decoding="async" />
 </figure>
 
+## Leaving folders out
+
+Some folders don't need a backup – caches, thumbnails, transcoded videos, temporary files. They can be big and the app builds them again. Open the stack → **Backups** tab → **Left out of backups** and enter paths inside the stack folder, one per line:
+
+```
+data/immich/thumbs
+data/*/cache
+data/**/tmp
+```
+
+`*` matches any name, `**` any number of folders. The next backup leaves them out (the log says what was skipped). After a restore these folders are missing – the app creates them again.
+
 ## Before every update
 
 With **Back up a stack before updating it** on, clicking **Update** on a stack first backs it up. If that backup fails, the update does not run.

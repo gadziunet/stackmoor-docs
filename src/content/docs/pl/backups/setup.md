@@ -51,6 +51,18 @@ Kopie robią się w wybrane dni o wybranej godzinie, w strefie czasowej przeglą
 <img class="shot-dark" src="/screens/pl/backups-settings-dark.webp" alt="Kopie → Ustawienia kopii" width="1216" height="1199" loading="lazy" decoding="async" />
 </figure>
 
+## Pomijanie folderów
+
+Niektóre foldery nie potrzebują kopii – cache, miniatury, przekodowane filmy, pliki tymczasowe. Bywają duże, a aplikacja zbuduje je od nowa. Otwórz stack → zakładka **Kopie** → **Pomijane w kopiach** i wpisz ścieżki w folderze stacka, po jednej w linii:
+
+```
+data/immich/thumbs
+data/*/cache
+data/**/tmp
+```
+
+`*` to dowolna nazwa, `**` dowolna liczba folderów. Następna kopia je pominie (w logu widać, co pominięto). Po przywróceniu tych folderów nie będzie – aplikacja utworzy je od nowa.
+
 ## Przed każdą aktualizacją
 
 Gdy włączone jest **Rób kopię stacka przed jego aktualizacją**, kliknięcie **Aktualizuj** najpierw robi kopię stacka. Jeśli się nie uda, aktualizacja się nie wykona.
