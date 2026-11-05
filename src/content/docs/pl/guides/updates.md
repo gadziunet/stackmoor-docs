@@ -59,7 +59,7 @@ Jeśli nowego obrazu Caddy nie da się pobrać (np. bez internetu), obecny Caddy
 
 ## Aktualizacja Stackmoor
 
-Gdy wyjdzie nowa wersja, pod górnym menu pojawia się czarny pasek *Nowa wersja panelu*, a wersja w pasku stanu na dole dostaje strzałkę. **Co nowego** albo **Aktualizuj** otwiera okno z opisem wydania; **×** chowa pasek do następnej wersji. To samo jest w **Ustawienia → Aktualizacje**.
+Gdy wyjdzie nowa wersja, pod górnym menu pojawia się czarny pasek *Nowa wersja panelu*, a wersja w pasku stanu na dole dostaje strzałkę. **Co nowego** albo **Aktualizuj** otwiera okno z opisem wydania; **×** chowa pasek do następnej wersji. To samo jest w **Ustawienia → Aktualizacje**. Nowa wersja pojawia się kilka minut po wydaniu – gdy jej obrazy są zbudowane; do tego czasu **Ustawienia → Aktualizacje** pokazują, że jest w drodze.
 
 Po kliknięciu **Aktualizuj teraz** okno pokazuje kolejne kroki. Strona odświeża się sama, gdy nowy panel odpowie – najpóźniej po 30 sekundach – a potem jeszcze raz sprawdza wersję, więc stary komunikat nie zostaje.
 

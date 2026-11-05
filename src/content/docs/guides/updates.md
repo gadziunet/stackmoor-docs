@@ -59,7 +59,7 @@ If the new Caddy image can't be downloaded (for example without internet), the c
 
 ## Updating Stackmoor
 
-When a new version is out, a black bar appears under the top menu – *New panel version* – and the version in the status bar at the bottom gets an arrow. **What’s new** or **Update** opens a window with the release notes; **×** hides the bar until the next version. The same is in **Settings → Updates**.
+When a new version is out, a black bar appears under the top menu – *New panel version* – and the version in the status bar at the bottom gets an arrow. **What’s new** or **Update** opens a window with the release notes; **×** hides the bar until the next version. The same is in **Settings → Updates**. A new version shows up a few minutes after it is released – once its images are built; until then **Settings → Updates** says it is on its way.
 
 After you click **Update now**, the window shows the steps. The page reloads by itself as soon as the new panel answers – after 30 seconds at the latest – and then checks the version once more, so no stale notice stays behind.
 
