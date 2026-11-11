@@ -97,6 +97,19 @@ Caddy używa na serwerze portów 80 i 443. Jeśli są zajęte (na Unraid przez j
 
 Usługi z `network_mode: host` nie mogą dołączyć do sieci Caddy. Caddy łączy się z nimi przez hosta – wystarczy podać port, na którym aplikacja nasłuchuje.
 
+Aplikacja musi nasłuchiwać na **wszystkich adresach** serwera (`0.0.0.0`), a nie tylko na swoim adresie w sieci: Caddy przychodzi z wewnętrznej sieci Dockera. Jeśli adres ciągle pokazuje *Aplikacja się uruchamia…*, a pod `192.168.1.x:port` aplikacja otwiera się normalnie, sprawdź jej ustawienie adresu nasłuchiwania. AdGuard Home pyta o nie na przykład w kreatorze – wybierz *Wszystkie interfejsy* albo ustaw `address: 0.0.0.0:3080` w sekcji `http:` pliku `AdGuardHome.yaml` i zrestartuj stack.
+
+## Gdy coś się uruchamia
+
+Gdy Caddy nie może połączyć się z panelem, aplikacją albo [proxy](/pl/guides/proxy/) – zaraz po starcie serwera, w trakcie aktualizacji panelu albo restartu stacka – nie zostawia przeglądarki z kręcącym się kółkiem. Pokazuje krótką stronę: *Stackmoor się uruchamia…*, *Aplikacja się uruchamia…* albo *Serwer nie odpowiada…*. Strona co 5 sekund sprawdza adres i sama go otwiera, gdy tylko odpowie. Dopasowuje się do języka przeglądarki (polski albo angielski) i trybu jasnego lub ciemnego systemu.
+
+<figure class="shot" data-shot="starting-page">
+<img class="shot-light" src="/screens/pl/starting-page-light.webp" alt="Strona, którą Caddy pokazuje, gdy panel się uruchamia" width="620" height="420" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/starting-page-dark.webp" alt="Strona, którą Caddy pokazuje, gdy panel się uruchamia" width="620" height="420" loading="lazy" decoding="async" />
+</figure>
+
+Jeśli zostaje dłużej niż kilka minut, aplikacja (albo serwer za proxy) nie startuje – sprawdź ją w panelu.
+
 ## Ochrona przed DNS rebinding
 
 Niektóre filtry DNS i routery (Pi-hole, AdGuard, ControlD, Fritz!Box, część routerów operatorów) blokują publiczne nazwy wskazujące na prywatne adresy typu `192.168.x.x`. Jeśli adres nie otwiera się w przeglądarce, dodaj swoją domenę do wyjątków w takim filtrze.

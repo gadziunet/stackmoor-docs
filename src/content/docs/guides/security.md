@@ -11,7 +11,7 @@ Stackmoor controls Docker on your server. Whoever can log in to the panel can st
 
 - **Don't forward ports to the server** on your router – neither the panel's port (5001) nor 80/443. The local domain (`*.home.example.com`) points to a private address, so it works only at home, and that's how it should stay.
 - **From outside, connect through a VPN** to your home network (WireGuard, the VPN on your router, Tailscale…) and open the panel as if you were at home.
-- To make some app public, don't forward 80/443 to Stackmoor's Caddy – the panel's address would become public too. Public addresses through Pangolin are planned.
+- To make some app public, don't forward 80/443 to Stackmoor's Caddy – the panel's address would become public too. Use a [public address through Pangolin](/guides/pangolin/) instead.
 
 ### A strong password
 
@@ -78,11 +78,14 @@ ports:
   ```
   You should see `apparmor` (or `selinux`) and `seccomp`. Containers with `privileged: true` lose this protection.
 - **Stackmoor:**
+  - a one-time [setup code](/start/install/#install): until the administrator account exists, only someone who can read the server's console can create it or restore a server from a backup,
   - login sessions in a cookie that scripts on the page can't read, valid only for the panel's own pages,
-  - a limit on login attempts,
+  - a limit on login attempts – counted by the real address of the browser. The panel trusts forwarded addresses only from its own Caddy, so nobody on the network can get around the limit by sending a made-up address. A login with an unknown username takes as long as a real one,
+  - security headers on every page: the panel can't be shown inside another site (protection against clickjacking), and it runs only its own scripts,
   - API keys of DNS providers and backup credentials stored encrypted,
   - encrypted backups,
-  - [panel only through its domain](/guides/panel-address/) – opening it by IP redirects to the domain with a certificate,
+  - [panel only through its domain](/guides/panel-address/) – opening it by IP redirects to the domain with a certificate; while Caddy is starting or restarting, nobody gets in,
+  - restoring from a backup accepts only real stack names and the database dumps a backup writes, so a tampered backup can't write outside the stacks folder,
   - deleting a stack moves its folder to `.trash/` instead of deleting the data.
 - Stackmoor connects to the internet only for what you use: update checks (GitHub), pulling images, your DNS provider and your backup storage. It sends no data about you.
 

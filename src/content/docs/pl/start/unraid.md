@@ -33,6 +33,14 @@ Potem dodaj przez **Add another Path, Port, Variable…**:
 Panel podaje Dockerowi hosta położenie stacków, więc folder stacków musi mieć **tę samą ścieżkę w kontenerze i na hoście**, a `STACKS_DIR` musi na niego wskazywać. Inaczej stacki znikną z panelu po aktualizacji. Panel pokazuje ostrzeżenie, gdy folder nie jest podpięty poprawnie.
 :::
 
+## Pierwsze uruchomienie
+
+Otwórz panel (**WebUI** w zakładce Docker w Unraid). Zanim założysz konto albo przywrócisz serwer z kopii, panel poprosi o jednorazowy **kod instalacyjny**. Znajdziesz go w logu kontenera: kliknij ikonę `stackmoor` → **Logs** i poszukaj linii `Setup code: …`. Albo w terminalu Unraid:
+
+```bash
+docker logs stackmoor | grep "Setup code"
+```
+
 ## Aktualizacje na Unraid
 
 Panel nie może podmienić kontenera, którym zarządza Unraid. Gdy pojawi się aktualizacja, zrób ją w Unraid: **Docker → Check for Updates → Update** przy `stackmoor`.

@@ -18,9 +18,20 @@ Skrypt:
 1. instaluje Dockera, jeśli go nie ma,
 2. tworzy `/opt/stackmoor` (panel) i `/opt/stacks` (Twoje stacki),
 3. uruchamia kontener `stackmoor`,
-4. wypisuje adres, np. `http://192.168.1.50:5001`.
+4. wypisuje adres i jednorazowy **kod instalacyjny**, np. `http://192.168.1.50:5001` i `K7QM-4XWD-9TPA`.
 
-Otwórz ten adres i utwórz konto administratora – to jedyne konto w panelu. Hasło musi mieć co najmniej 10 znaków.
+Otwórz ten adres, wpisz kod instalacyjny i utwórz konto administratora – to jedyne konto w panelu. Hasło musi mieć co najmniej 10 znaków.
+
+Kod instalacyjny gwarantuje, że konto założy albo serwer z kopii przywróci tylko ktoś, kto widzi konsolę serwera – czyli Ty. Dopóki konta nie ma, inaczej mógłby to zrobić pierwszy lepszy w Twojej sieci. Kod działa jednorazowo: znika, gdy tylko konto powstanie. Jeśli go zgubisz, pokaż go ponownie na serwerze:
+
+```bash
+docker logs stackmoor | grep "Setup code"
+```
+
+<figure class="shot" data-shot="setup-code">
+<img class="shot-light" src="/screens/pl/setup-code-light.webp" alt="Zakładanie konta administratora z kodem instalacyjnym" width="380" height="692" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/pl/setup-code-dark.webp" alt="Zakładanie konta administratora z kodem instalacyjnym" width="380" height="692" loading="lazy" decoding="async" />
+</figure>
 
 Następnie panel pyta, **jak chcesz go otwierać**: na razie po adresie IP albo od razu pod własną domeną (np. `https://my.dom.example.com`) – zob. [Domeny lokalne](/pl/guides/local-domains/). Zmienisz to później w każdej chwili.
 

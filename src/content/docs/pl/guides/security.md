@@ -11,7 +11,7 @@ Stackmoor steruje Dockerem na Twoim serwerze. Kto zaloguje się do panelu, może
 
 - **Nie przekierowuj portów na serwer** w routerze – ani portu panelu (5001), ani 80/443. Lokalna domena (`*.dom.example.com`) wskazuje na adres prywatny, więc działa tylko w domu – i tak ma zostać.
 - **Z zewnątrz łącz się przez VPN** do sieci domowej (WireGuard, VPN w routerze, Tailscale…) i otwieraj panel tak, jakbyś był w domu.
-- Jeśli chcesz wystawić jakąś aplikację publicznie, nie przekierowuj 80/443 na Caddy ze Stackmoor – publiczny stałby się też adres panelu. Publiczne adresy przez Pangolina są w planach.
+- Jeśli chcesz wystawić jakąś aplikację publicznie, nie przekierowuj 80/443 na Caddy ze Stackmoor – publiczny stałby się też adres panelu. Użyj zamiast tego [publicznego adresu przez Pangolina](/pl/guides/pangolin/).
 
 ### Mocne hasło
 
@@ -78,11 +78,14 @@ ports:
   ```
   Powinno być `apparmor` (albo `selinux`) i `seccomp`. Kontenery z `privileged: true` tracą tę ochronę.
 - **Stackmoor:**
+  - jednorazowy [kod instalacyjny](/pl/start/install/#instalacja): dopóki nie ma konta administratora, założyć je albo przywrócić serwer z kopii może tylko ktoś, kto widzi konsolę serwera,
   - sesja logowania w ciasteczku, którego skrypty na stronie nie mogą odczytać i które działa tylko na stronach panelu,
-  - limit prób logowania,
+  - limit prób logowania – liczony według prawdziwego adresu przeglądarki. Panel ufa przekazanym adresom tylko od własnego Caddy, więc nikt w sieci nie obejdzie limitu, podając zmyślony adres. Logowanie na nieistniejące konto trwa tyle samo co na istniejące,
+  - nagłówki bezpieczeństwa na każdej stronie: panelu nie da się osadzić w innej stronie (ochrona przed clickjackingiem) i uruchamia on tylko własne skrypty,
   - klucze API dostawców DNS i dane do kopii zapisane w postaci zaszyfrowanej,
   - szyfrowane kopie zapasowe,
-  - [panel tylko przez swoją domenę](/pl/guides/panel-address/) – wejście po adresie IP przekierowuje na domenę z certyfikatem,
+  - [panel tylko przez swoją domenę](/pl/guides/panel-address/) – wejście po adresie IP przekierowuje na domenę z certyfikatem; gdy Caddy się uruchamia albo restartuje, nikt nie wejdzie,
+  - przywracanie z kopii przyjmuje tylko prawdziwe nazwy stacków i zrzuty baz, które zapisuje sama kopia, więc podrobiona kopia nie zapisze niczego poza folderem stacków,
   - usunięcie stacka przenosi jego folder do `.trash/` zamiast kasować dane.
 - Stackmoor łączy się z internetem tylko w tym, czego używasz: sprawdzanie aktualizacji (GitHub), pobieranie obrazów, Twój dostawca DNS i miejsce na kopie. Nie wysyła żadnych danych o Tobie.
 

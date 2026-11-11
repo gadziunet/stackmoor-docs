@@ -53,7 +53,9 @@ Powrót przywraca poprzednie **obrazy**, nie dane. Jeśli nowa wersja zdążyła
 
 ## Caddy aktualizuje się razem z panelem
 
-Jeśli używasz [domen lokalnych](/pl/guides/local-domains/), nie ma nic osobnego do aktualizowania. Każde wydanie Stackmoor ma własny obraz Caddy (z najnowszymi poprawkami Caddy z chwili wydania), a po aktualizacji panel sam przełącza na niego Caddy. Certyfikaty zostają, a adresy są niedostępne tylko przez kilka sekund.
+Jeśli używasz [domen lokalnych](/pl/guides/local-domains/), nie ma nic osobnego do aktualizowania. Każde wydanie Stackmoor ma własny obraz Caddy (z najnowszymi poprawkami Caddy z chwili wydania), a po aktualizacji panel sam przełącza na niego Caddy – ale tylko wtedy, gdy zmienił się sam Caddy (nowa wersja Caddy, Go albo modułu). Większość aktualizacji panelu zostawia Caddy w spokoju, więc adresy w ogóle nie znikają. Gdy Caddy jest przełączany, certyfikaty zostają, a adresy są niedostępne tylko przez kilka sekund.
+
+Gdy panel restartuje się po aktualizacji, pod jego adresem widać krótką [stronę ładowania](/pl/guides/local-domains/#gdy-coś-się-uruchamia), a okno aktualizacji przeładowuje stronę dopiero wtedy, gdy panel w pełni wystartuje.
 
 Jeśli nowego obrazu Caddy nie da się pobrać (np. bez internetu), obecny Caddy działa dalej, zakładka **Domeny** pokazuje informację, a panel próbuje ponownie co kilka godzin.
 

@@ -40,12 +40,13 @@ There is no **Restart** or backup for a proxy: Stackmoor does not manage that se
 
 ## Advanced
 
-- **Send the target’s own address as the Host header** – some servers only answer to their own name or IP. Turn this on if the address opens but the server shows an error or a blank page.
+- **Send the target’s own address as the Host header** – some servers only answer to their own name or IP. Turn this on only if the address opens but the server shows an error or a blank page. Leave it off otherwise: with it on, the server believes it was opened by its IP and puts that IP into links it builds itself. For example, the VNC console of an Unraid VM then tries to connect straight to `192.168.1.10` and fails with *Failed to connect to server*. Without the option it works through the proxy.
 - **Show its state on the dashboard** – turn it off for devices that are often switched off on purpose.
 
 ## Good to know
 
 - The target must be reachable **from the server** running Stackmoor – it is the server that connects, not your browser.
 - WebSockets work without any setting, so web consoles (Proxmox noVNC, Home Assistant) work too.
+- When the target doesn't answer (switched off, starting, or a wrong port or certificate setting), the address shows a page *The server is not answering…* that reloads by itself once it answers – see [Local domains](/guides/local-domains/#while-something-is-starting).
 - When the target redirects to its own address (Unraid sends you to `http://192.168.1.10:8086/Dashboard`), Stackmoor turns that back into your address – just like Nginx Proxy Manager. Redirects to other addresses are left alone.
-- A stack running with `network_mode: host` doesn't need a proxy: give it an address in its own **Domain** tab with the port it listens on.
+- A stack running with `network_mode: host` doesn't need a proxy: give it an address in its own **Domain** tab with the port it listens on. See [Apps on the host network](/guides/local-domains/#apps-on-the-host-network).

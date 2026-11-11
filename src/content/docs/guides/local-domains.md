@@ -97,6 +97,19 @@ Caddy uses ports 80 and 443 on the server. If they are taken (on Unraid by its w
 
 Services with `network_mode: host` can't join Caddy's network. Caddy reaches them through the host instead – just give the port the app listens on.
 
+The app has to listen on **all addresses** of the server (`0.0.0.0`), not only on its address in your network: Caddy comes from Docker's internal network. If the address keeps showing *This app is starting…* while the app opens fine at `192.168.1.x:port`, check the app's own setting for the listening address. AdGuard Home, for example, asks for it in its setup wizard – choose *All interfaces*, or set `address: 0.0.0.0:3080` under `http:` in `AdGuardHome.yaml` and restart the stack.
+
+## While something is starting
+
+When Caddy can't reach the panel, an app or a [proxy](/guides/proxy/) – right after the server starts, while the panel updates, or while a stack restarts – it doesn't leave the browser spinning. It shows a short page instead: *Stackmoor is starting…*, *This app is starting…* or *The server is not answering…*. The page checks the address every 5 seconds and opens it by itself as soon as it answers. It follows the browser's language (English or Polish) and the system's light or dark mode.
+
+<figure class="shot" data-shot="starting-page">
+<img class="shot-light" src="/screens/en/starting-page-light.webp" alt="The page Caddy shows while the panel is starting" width="620" height="420" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/starting-page-dark.webp" alt="The page Caddy shows while the panel is starting" width="620" height="420" loading="lazy" decoding="async" />
+</figure>
+
+If it stays for more than a few minutes, the app (or the server behind a proxy) doesn't start – look at it in the panel.
+
 ## DNS rebinding protection
 
 Some DNS filters and routers (Pi-hole, AdGuard, ControlD, Fritz!Box, some ISP routers) block public names that point to private IPs like `192.168.x.x`. If an address does not open in the browser, allow your domain in that filter.

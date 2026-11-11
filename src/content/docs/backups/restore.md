@@ -53,7 +53,7 @@ The copy won't start if its `compose.yaml` uses the same published ports or `con
 
 When a server dies, install Stackmoor on a new one ([Linux](/start/install/) or [Unraid](/start/unraid/)) and open the panel. Instead of creating an account:
 
-1. click **Restore a server from a backup**,
+1. enter the **setup code** (the installer shows it; see [Install](/start/install/)) and click **Restore a server from a backup**,
 2. enter the storage (provider, address, bucket, folder, keys) and the **encryption password** of the old server, and click **Connect**,
 3. choose a backup – only complete runs are offered (they contain the panel's settings),
 4. click **Restore this backup** and follow the progress.
@@ -64,7 +64,7 @@ Stackmoor restores, in this order:
 - every stack of that run, with its databases,
 - Caddy with its certificates, if you used local domains.
 
-Then log in with your **previous** account.
+When it is done, the wizard takes you to the login page by itself – log in with your **previous** account. If the backup had a [panel address](/guides/panel-address/) in your domain, the wizard waits until its certificate works and opens the login there; until then you can log in by IP with **Log in here instead**. If the restore needs your attention (a stack failed), it waits for you to read the list first.
 
 :::tip
 The new server may use a different stacks folder – stacks are restored into the folder of the new installation. Point your DNS record to the new server's IP if it changed.

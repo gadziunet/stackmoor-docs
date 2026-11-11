@@ -21,6 +21,20 @@ Panel jest ustawiony tak, żeby otwierał się tylko pod swoją domeną. Jeśli 
 docker exec stackmoor node src/cli.js unlock
 ```
 
+### Panel prosi o kod instalacyjny
+
+Świeża instalacja prosi o jednorazowy kod, zanim założysz konto albo przywrócisz serwer. Pokaż go na serwerze:
+
+```bash
+docker logs stackmoor | grep "Setup code"
+```
+
+Na Unraid: ikona `stackmoor` → **Logs**. Kod znika, gdy konto już istnieje.
+
+### „Stackmoor się uruchamia…” nie znika
+
+Panel pokazuje to, gdy nie widzi własnego Caddy (przy włączonym [panelu tylko przez domenę](/pl/guides/panel-address/)). Zwykle trwa to kilka sekund po starcie albo aktualizacji. Jeśli zostaje, Caddy nie działa – uruchom go ponownie w zakładce **Domeny** albo otwórz panel po IP po odblokowaniu (zob. wyżej).
+
 ### Po aktualizacji panel wygląda po staremu
 
 Odśwież stronę raz przez **Ctrl+Shift+R** (**Cmd+Shift+R** na Macu).

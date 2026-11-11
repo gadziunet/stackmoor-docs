@@ -53,7 +53,7 @@ Klon nie wystartuje, jeśli jego `compose.yaml` używa tych samych publikowanych
 
 Gdy serwer padnie, zainstaluj Stackmoor na nowym ([Linux](/pl/start/install/) albo [Unraid](/pl/start/unraid/)) i otwórz panel. Zamiast tworzyć konto:
 
-1. kliknij **Przywróć serwer z kopii zapasowej**,
+1. wpisz **kod instalacyjny** (pokazuje go instalator; zob. [Instalacja](/pl/start/install/)) i kliknij **Przywróć serwer z kopii zapasowej**,
 2. podaj magazyn (dostawcę, adres, bucket, folder, klucze) i **hasło szyfrowania** starego serwera, kliknij **Połącz**,
 3. wybierz kopię – pokazywane są tylko pełne uruchomienia (zawierają ustawienia panelu),
 4. kliknij **Przywróć tę kopię** i obserwuj postęp.
@@ -64,7 +64,7 @@ Stackmoor przywraca po kolei:
 - wszystkie stacki z tego uruchomienia, razem z bazami danych,
 - Caddy z certyfikatami, jeśli używałeś domen lokalnych.
 
-Potem zaloguj się swoim **poprzednim** kontem.
+Po zakończeniu kreator sam przejdzie do logowania – zaloguj się swoim **poprzednim** kontem. Jeśli kopia zawierała [adres panelu](/pl/guides/panel-address/) w Twojej domenie, kreator poczeka, aż zadziała jego certyfikat, i otworzy logowanie tam; do tego czasu możesz zalogować się po IP przyciskiem **Zaloguj się tutaj**. Jeśli coś wymaga uwagi (któryś stack się nie przywrócił), kreator najpierw czeka, aż przeczytasz listę.
 
 :::tip
 Nowy serwer może mieć inny folder stacków – stacki trafiają do folderu nowej instalacji. Jeśli zmienił się adres IP, popraw rekord DNS.

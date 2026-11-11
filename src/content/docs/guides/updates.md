@@ -53,7 +53,9 @@ Going back restores the previous **images**, not the data. If a new version alre
 
 ## Caddy updates with the panel
 
-If you use [local domains](/guides/local-domains/), there is nothing separate to update. Every Stackmoor release comes with its own Caddy image (with the newest Caddy fixes at the time), and after you update the panel it switches Caddy to that image by itself. Certificates are kept; addresses are unavailable only for a few seconds.
+If you use [local domains](/guides/local-domains/), there is nothing separate to update. Every Stackmoor release comes with its own Caddy image (with the newest Caddy fixes at the time), and after you update the panel it switches Caddy to that image by itself – but only when Caddy itself changed (a new Caddy, Go or module version). Most panel updates leave Caddy running, so your addresses don't go offline at all. When Caddy is switched, certificates are kept and addresses are unavailable only for a few seconds.
+
+While the panel restarts after an update, its address shows a short [starting page](/guides/local-domains/#while-something-is-starting), and the update window reloads the page only once the panel has fully started.
 
 If the new Caddy image can't be downloaded (for example without internet), the current Caddy keeps working, the **Domains** tab shows a note, and the panel tries again every few hours.
 

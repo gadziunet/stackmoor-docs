@@ -40,12 +40,13 @@ Proxy nie ma przycisku **Restart** ani kopii: Stackmoor nie zarządza tym serwer
 
 ## Zaawansowane
 
-- **Wysyłaj w nagłówku Host adres celu** – niektóre serwery odpowiadają tylko na własną nazwę albo IP. Włącz, jeśli adres się otwiera, ale serwer pokazuje błąd albo pustą stronę.
+- **Wysyłaj w nagłówku Host adres celu** – niektóre serwery odpowiadają tylko na własną nazwę albo IP. Włącz tylko wtedy, gdy adres się otwiera, ale serwer pokazuje błąd albo pustą stronę. W pozostałych przypadkach zostaw wyłączone: z tą opcją serwer uważa, że otwarto go po IP, i wstawia to IP do linków, które sam buduje. Na przykład konsola VNC maszyny wirtualnej w Unraid łączy się wtedy bezpośrednio z `192.168.1.10` i kończy się błędem *Failed to connect to server*. Bez tej opcji działa przez proxy.
 - **Pokazuj stan na pulpicie** – wyłącz dla urządzeń, które często są celowo wyłączone.
 
 ## Warto wiedzieć
 
 - Cel musi być osiągalny **z serwera**, na którym działa Stackmoor – to serwer się łączy, nie Twoja przeglądarka.
+- Gdy serwer docelowy nie odpowiada (wyłączony, dopiero się uruchamia albo zły port lub ustawienie certyfikatu), pod adresem pojawia się strona *Serwer nie odpowiada…*, która sama się odświeży, gdy zacznie odpowiadać – zob. [Domeny lokalne](/pl/guides/local-domains/#gdy-coś-się-uruchamia).
 - WebSockety działają bez ustawień, więc konsole w przeglądarce (noVNC w Proxmoxie, Home Assistant) też działają.
 - Gdy cel przekierowuje na swój własny adres (Unraid odsyła na `http://192.168.1.10:8086/Dashboard`), Stackmoor zamienia go z powrotem na Twój adres – tak samo jak Nginx Proxy Manager. Przekierowania na inne adresy zostają bez zmian.
-- Stack z `network_mode: host` nie potrzebuje proxy: nadaj mu adres w jego zakładce **Domena**, z portem, na którym słucha.
+- Stack z `network_mode: host` nie potrzebuje proxy: nadaj mu adres w jego zakładce **Domena**, z portem, na którym słucha. Zob. [Aplikacje w sieci hosta](/pl/guides/local-domains/#aplikacje-w-sieci-hosta).

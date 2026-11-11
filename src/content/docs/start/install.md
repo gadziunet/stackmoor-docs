@@ -18,9 +18,20 @@ The script:
 1. installs Docker if it is missing,
 2. creates `/opt/stackmoor` (the panel) and `/opt/stacks` (your stacks),
 3. starts the `stackmoor` container,
-4. prints the address, e.g. `http://192.168.1.50:5001`.
+4. prints the address and a one-time **setup code**, e.g. `http://192.168.1.50:5001` and `K7QM-4XWD-9TPA`.
 
-Open that address and create the administrator account – it is the only account in the panel. The password needs at least 10 characters.
+Open that address, enter the setup code and create the administrator account – it is the only account in the panel. The password needs at least 10 characters.
+
+The setup code makes sure that only someone who can see the server's console – you – creates the account or restores a server from a backup. Until the account exists, anyone on your network could otherwise do it first. The code works only once: it is gone as soon as the account exists. If you lost it, show it again on the server:
+
+```bash
+docker logs stackmoor | grep "Setup code"
+```
+
+<figure class="shot" data-shot="setup-code">
+<img class="shot-light" src="/screens/en/setup-code-light.webp" alt="Creating the administrator account with the setup code" width="380" height="692" loading="lazy" decoding="async" />
+<img class="shot-dark" src="/screens/en/setup-code-dark.webp" alt="Creating the administrator account with the setup code" width="380" height="692" loading="lazy" decoding="async" />
+</figure>
 
 Next the panel asks **how you want to open it**: by IP address for now, or with your own domain right away (e.g. `https://my.home.example.com`) – see [Local domains](/guides/local-domains/). You can change this later at any time.
 

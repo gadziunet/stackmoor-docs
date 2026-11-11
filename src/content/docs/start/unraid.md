@@ -33,6 +33,14 @@ Then add these with **Add another Path, Port, Variable…**:
 The panel tells the host's Docker where your stacks are, so the stacks folder must have **the same path in the container and on the host**, and `STACKS_DIR` must point to it. If it does not, your stacks disappear from the panel after an update. The panel shows a warning when the folder is not mounted correctly.
 :::
 
+## First start
+
+Open the panel (**WebUI** in Unraid's Docker tab). It asks for a one-time **setup code** before you create the account or restore a server from a backup. You find it in the container's log: click the `stackmoor` icon → **Logs**, and look for the line `Setup code: …`. Or in Unraid's terminal:
+
+```bash
+docker logs stackmoor | grep "Setup code"
+```
+
 ## Updates on Unraid
 
 The panel can't replace a container that Unraid manages. When an update is available, update it in Unraid: **Docker → Check for Updates → Update** next to `stackmoor`.
