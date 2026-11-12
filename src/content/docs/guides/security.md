@@ -86,6 +86,7 @@ ports:
   - encrypted backups,
   - [panel only through its domain](/guides/panel-address/) – opening it by IP redirects to the domain with a certificate; while Caddy is starting or restarting, nobody gets in,
   - restoring from a backup accepts only real stack names and the database dumps a backup writes, so a tampered backup can't write outside the stacks folder,
+  - a separate network for the panel: Caddy and the panel share their own internal Docker network (`stackmoor-admin`), while apps sit only on the apps' network (`stackmoor`) with Caddy. An app – even a compromised one – can't reach the panel directly, the same way a guest Wi-Fi can't open the router's admin page,
   - deleting a stack moves its folder to `.trash/` instead of deleting the data.
 - Stackmoor connects to the internet only for what you use: update checks (GitHub), pulling images, your DNS provider and your backup storage. It sends no data about you.
 

@@ -86,6 +86,7 @@ ports:
   - szyfrowane kopie zapasowe,
   - [panel tylko przez swoją domenę](/pl/guides/panel-address/) – wejście po adresie IP przekierowuje na domenę z certyfikatem; gdy Caddy się uruchamia albo restartuje, nikt nie wejdzie,
   - przywracanie z kopii przyjmuje tylko prawdziwe nazwy stacków i zrzuty baz, które zapisuje sama kopia, więc podrobiona kopia nie zapisze niczego poza folderem stacków,
+  - osobna sieć dla panelu: Caddy i panel mają własną, wewnętrzną sieć Dockera (`stackmoor-admin`), a aplikacje są tylko w sieci aplikacji (`stackmoor`) razem z Caddy. Aplikacja – nawet przejęta – nie połączy się z panelem bezpośrednio, tak jak sieć gości w Wi-Fi nie otworzy panelu administracyjnego routera,
   - usunięcie stacka przenosi jego folder do `.trash/` zamiast kasować dane.
 - Stackmoor łączy się z internetem tylko w tym, czego używasz: sprawdzanie aktualizacji (GitHub), pobieranie obrazów, Twój dostawca DNS i miejsce na kopie. Nie wysyła żadnych danych o Tobie.
 
